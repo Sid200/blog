@@ -1,0 +1,842 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>The Essence of Lambdas in C++ &#8211; Sid's Blog</title>
+<meta name="description" content="Understand Lambdas in C++ like never before, in a beginner friendly manner">
+<meta name="keywords" content="cpp, c++, lambdas, lambda, functor, function, pointers">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:4000/images/LambdasInCPP/lambdas-in-cpp.png">
+
+<meta name="twitter:title" content="The Essence of Lambdas in C++">
+<meta name="twitter:description" content="Understand Lambdas in C++ like never before, in a beginner friendly manner">
+<meta name="twitter:creator" content="@https://www.twitter.com/***REMOVED***">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Essence of Lambdas in C++">
+<meta property="og:description" content="Understand Lambdas in C++ like never before, in a beginner friendly manner">
+<meta property="og:url" content="http://localhost:4000/the-essence-of-lambdas-in-c/">
+<meta property="og:site_name" content="Sid's Blog">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/the-essence-of-lambdas-in-c/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Sid's Blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/images/favicon_16x16.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/images/favicon_32x32.png">
+
+
+
+
+
+
+<style type="text/css">body {background-image:url(http://localhost:4000/images/LambdasInCPP/bg.jpg);}</style>
+
+
+</head>
+
+<body id="post" class="feature">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://localhost:4000/">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li>
+					<img src="http://localhost:4000/images/avatar.png" alt="Siddhanth Bhowmick photo" class="author-photo">
+					<h4>Siddhanth Bhowmick</h4>
+					<p>A keen learner, tech enthusiast, Science-Lover, Programmer.</p>
+				</li>
+				<li><a href="http://localhost:4000/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+				<li>
+					<a href="mailto:***REMOVED***"><i class="fa fa-fw fa-envelope"></i> Email</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/https://www.twitter.com/***REMOVED***"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+				</li>
+				
+				
+				
+				<li>
+					<a href="https://github.com/https://www.github.com/sid200"><i class="fa fa-fw fa-github"></i> GitHub</a>
+				</li>
+				
+				<li>
+					<a href="https://instagram.com/https://www.instagram.com/***REMOVED***"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+				</li>
+				
+				
+			</ul><!-- /.dl-submenu -->
+		</li>
+		<li>
+			<a href="#">Posts</a>
+			<ul class="dl-submenu">
+				<li><a href="http://localhost:4000/posts/">All Posts</a></li>
+				<li><a href="http://localhost:4000/tags/">All Tags</a></li>
+			</ul>
+		</li>
+		
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+<div class="entry-header">
+  <div class="image-credit">Image source: Myself :P</div><!-- /.image-credit -->
+  <div class="entry-image">
+    <img src="http://localhost:4000/images/LambdasInCPP/lambdas-in-cpp.png" alt="The Essence of Lambdas in C++">
+  </div><!-- /.entry-image -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="http://localhost:4000/the-essence-of-lambdas-in-c/" rel="bookmark" title="The Essence of Lambdas in C++">The Essence of Lambdas in C++</a></h1>
+        
+        <h2><span class="entry-date date published"><time datetime="2019-04-10T15:51:00-04:00">April 10, 2019</time></span></h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+Reading time ~14 minutes
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <h1 id="hello-there">Hello there!</h1>
+
+<p>This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I though because I didn’t know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using was well, as you may have guessed, using that. Not only that, I didn’t know anything about how Ruby, it’s “GEMS” worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.</p>
+
+<p>Anyways, let’s get on to the topic of discussion.</p>
+
+<h2 id="lambdas-in-c">LAMBDAs in C++</h2>
+
+<p>Probably a foreign topic to ya? No? Well if you came to read this blog post, you might want to know some stuff about it, right?</p>
+
+<p>Some prerequisite knowledge that you need to need to need to have:</p>
+
+<ul>
+  <li>What pointers really are</li>
+  <li>Function Pointers</li>
+  <li>How to write and overload operators for classes…</li>
+</ul>
+
+<p>This is how a very basic lambda looks:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[](){}</span>  <span class="c1">//this is known as an anonymous lambda as it doesn't have a name
+</span>
+<span class="c1">//or even a simpler version:
+</span><span class="p">[]{}</span>
+</code></pre></div></div>
+
+<p>So it is nothing but a bunch of brackets. No need to be scared of it. We aren’t going to talk about them just right now, we need to cover some topics first.</p>
+
+<h3 id="functors">Functors</h3>
+
+<p>First off, you need to know what a <b>functor</b> is.</p>
+
+<p>A Class object which just “acts” like a function is called a functor(basically meaning that it overloads its operator() method):</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">sub</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+	<span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+	<span class="n">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="k">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">val</span> <span class="o">-</span> <span class="n">x</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">//main
+</span>
+	<span class="n">sub</span> <span class="n">subFrom2</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">subFrom2</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>	<span class="c1">//-1
+</span>
+</code></pre></div></div>
+
+<p>The C++ Standard Library has many functions that make use of things known as <b>predicates</b>. Which are nothing but functors. The STL does define some basic functors like <code>std::greater</code> &amp; 
+<code>std::sort</code> :</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;vector&gt;		//std::vector which is a container class. In simple words, a better array... 
+#include&lt;functional&gt;		//std::greater
+#include&lt;algorithm&gt;		//std::sort
+</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span> <span class="p">};</span>
+
+
+	<span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>	<span class="c1">//sorts in descending order...
+</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">elem</span> <span class="o">:</span> <span class="n">vec</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">elem</span><span class="p">;</span>
+	<span class="p">}</span>	
+
+	<span class="c1">//97532
+</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><code>std::greater</code> is just a functor with an overloaded <code>operator()</code>. It takes in two parameters and returns a bool depending on whether the first param is greater than the second (true) or not(false):</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">struct</span> <span class="n">myGreater</span> <span class="p">{</span>
+	<span class="kt">bool</span> <span class="k">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+<blockquote>
+  <p>Please do note that I have simplified implementations as I didn’t want to overcomplicate stuff with <br />
+templates and related stuff and just get to the point….<br />
+That doesn’t mean that I won’t be talking about Generic Lambdas (that is at the very end) though…<br />
+If you want to see implementations, I would highly recommend <a href="https://www.cppreference.com">cppreference</a>
+<br /></p>
+</blockquote>
+
+<p>However, if you are using something unique, you would probably need to use Lambdas…</p>
+
+<p>Consider that you created your own <code>Point2D</code> class. Consider that you had a 
+<code>std::vector</code> of some Point2D Objects. How would you sort them (on the basis of their distance from the origin) in ascending order using <code>std::sort</code>?.
+<br />Think about using a functor, as I haven’t talked about lambdas right now…
+<br />
+<br />And obviously, <code>std::greater</code> wouldn’t work…</p>
+
+<p><br />Probably something like this?:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Point2D</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+	<span class="kt">int</span> <span class="n">m_x</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">m_y</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+	<span class="n">Point2D</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">:</span> <span class="n">m_x</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">m_y</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">ptLesser</span> <span class="p">{</span>
+	<span class="kt">bool</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">Point2D</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point2D</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">m_x</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">m_x</span> <span class="o">+</span> <span class="n">a</span><span class="p">.</span><span class="n">m_y</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">m_y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">m_x</span><span class="o">*</span><span class="n">b</span><span class="p">.</span><span class="n">m_x</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">m_y</span><span class="o">*</span><span class="n">b</span><span class="p">.</span><span class="n">m_y</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+
+	<span class="n">Point2D</span> <span class="n">pt1</span><span class="p">{</span> <span class="mi">3</span><span class="p">,</span><span class="mi">4</span> <span class="p">};</span>
+	<span class="n">Point2D</span> <span class="n">pt2</span><span class="p">{</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="p">};</span>
+	<span class="n">Point2D</span> <span class="n">pt3</span><span class="p">{</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span> <span class="p">};</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point2D</span><span class="o">&gt;</span><span class="n">vec</span><span class="p">{</span><span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">pt3</span><span class="p">};</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">ptLesser</span><span class="p">());</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>Now just guess that you probably use the sort in only one particular function. Well, what you are basically doing is just making the whole process much cumbersome by writing a whole struct for that one simple task that you probably are gonna use for just once.</p>
+
+<p><br /></p>
+
+<p>Since C++11, you no longer need to do this. Say hello to the <b>Lambdas</b>(again), allowing us to write
+shorter, simpler and easier to maintain code:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Point2D</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point2D</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span>
+	<span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">m_x</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">m_x</span> <span class="o">+</span> <span class="n">a</span><span class="p">.</span><span class="n">m_y</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">m_y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">m_x</span><span class="o">*</span><span class="n">b</span><span class="p">.</span><span class="n">m_x</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">m_y</span><span class="o">*</span><span class="n">b</span><span class="p">.</span><span class="n">m_y</span><span class="p">);</span>
+	<span class="p">});</span>
+</code></pre></div></div>
+<p>OR
+<br /></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Point2D</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Point2D</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">m_x</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">m_x</span> <span class="o">+</span> <span class="n">a</span><span class="p">.</span><span class="n">m_y</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">m_y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">m_x</span><span class="o">*</span><span class="n">b</span><span class="p">.</span><span class="n">m_x</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">m_y</span><span class="o">*</span><span class="n">b</span><span class="p">.</span><span class="n">m_y</span><span class="p">);</span>
+	<span class="p">};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">lambda</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>and that’s it!
+<br /><br /></p>
+
+<p>For a heads up: Lambdas are very much the same as functors… 
+<br />In this case, there is no difference between the lambda and a functor similar to the lambda…
+<br />
+However, there is a small difference which we will be talking about a little later…</p>
+
+<h2 id="how-to-write-lambdas-what-are-these-brackets">How to write lambdas!?! What are these brackets!!!?!!!</h2>
+
+<p>That was well how I reacted when I was learning about them… It probably is better to look at how to write lambdas and then we will discuss what’s going on under the hood…</p>
+
+<p>Alright, so first up is how to write one? A basic lambda declaration to print “Hello World” would be:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]()</span><span class="o">-&gt;</span><span class="kt">void</span><span class="p">{</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Hello World"</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>What I just showed above is an example of a complete lambda. Let’s have a brief overview of each of these parts and then we will discuss whatever is important in deep:</p>
+
+<ul>
+  <li>
+    <p>The <b>[ ]</b>: This thingy represents a capture list. By default a lamda can’t access any variable 
+(other than the ones initialised/declared inside it or passed as params). Modifications on the Capture List help us to tell it how to “capture” the variables…</p>
+  </li>
+  <li>
+    <p>The <b>( )</b> is nothing but simply a parameter encloser… You write all the parameters inside this which are to be passed when you “call” the lambda… If there are no parameters, you can exclude the parenthesis.</p>
+  </li>
+  <li>
+    <p>The <b>-&gt;void</b>: It is just a heads up for the compiler as to what the lambda returns when called. In many cases it is obvious or the compiler can deduce it implicitly and need not be provided.</p>
+  </li>
+  <li>
+    <p>The <b>{ }</b> refers to the block of code that the lambda will execute.</p>
+  </li>
+</ul>
+
+<h3 id="alright-i-understand-except-for-what-a-lambda-really-is">Alright, I understand except for what a lambda really is…</h3>
+
+<p>That’s supposed to happen because that’s how I wanted to frame up my talk.<br />
+A <b>Lambda</b> is an object which is callable. Just like a function. Lambdas which don’t have names are anonymous lambdas. These are inline and provide us the ability to keep relevant code together 
+(like in sorting thing, everything related to it was just one line).</p>
+
+<h3 id="lets-go-deep-on-what-actually-happens-when-we-write-a-lambda">Let’s go deep on what actually happens when we write a lambda…</h3>
+
+<p>In basic sense, a functor is automatically created as per the lambda written. For example:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+<span class="p">[](){</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Hello World!"</span><span class="p">;};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><b>CAN BE THOUGHT AS TRANSFORMMING INTO: </b></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">_ZZ4mainENKUliE_</span><span class="p">{</span>	<span class="c1">// a compiler generated name...
+</span><span class="nl">public:</span>
+
+	<span class="kt">void</span> <span class="k">operator</span><span class="p">()()</span> <span class="k">const</span> <span class="p">{</span>	<span class="c1">//note the const
+</span>		<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Hello World!"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+
+	<span class="n">_ZZ4mainENKUliE_</span><span class="p">()();</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>By default, the operator overload that happens for the class of the lambda is said to be <b><i>const</i></b>
+The code above shows how… This means that the lambda cannot modify its object’s member variables… <br />
+(in this case there aren’t any).</p>
+
+<p><br />Let’s look at another example that shows the use of member variables.</p>
+
+<p><b>Wait, where to put these member variables?</b>
+<br />That’s what the Capture List is for. Get it now?</p>
+
+<p><br /></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">a</span><span class="p">](){</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">;};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><b>TURNS TO: </b></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">_ZZ4mainENKUliE_</span><span class="p">{</span>	<span class="c1">// a compiler generated name...
+</span><span class="nl">private:</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+
+	<span class="n">_ZZ4mainENKUliE_</span><span class="p">(</span><span class="kt">int</span> <span class="n">_a</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">(</span><span class="n">_a</span><span class="p">){</span>
+
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="k">operator</span><span class="p">()()</span> <span class="k">const</span> <span class="p">{</span>	<span class="c1">//note the const
+</span>		<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">;</span>
+	<span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+
+	<span class="n">_ZZ4mainENKUliE_</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+	<span class="n">_ZZ4mainENKUliE_</span><span class="p">();</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Now, let’s say you wanted to modify <code>a</code>. Essentially, you are asking how to remove that
+<b><i>const</i></b> from the <code>operator()</code>. There are a couple of ways to do so.. 
+<br />The simplest of them is to add <code>mutable</code> after the parantheses.</p>
+
+<p><br /> Adding that basically means whatever you will be “capturing” can be modified…</p>
+
+<h3 id="type-of-a-lambda">Type of a Lambda</h3>
+
+<p>A lambda is nothing but <b>“syntactic sugar”</b> for functors. The code of a lambda is converted to that of a functor (in a unique way which we will see by looking at the disassembly). Here’s an extract from the standard (you gotta read the docs) :</p>
+
+<blockquote>
+  <p>“The evaluation of a lambda-expression results in a prvalue temporary. 
+This temporary is called the closure object.
+The type of the lambda-expression (which is also the type of the closure object) 
+is a unique, unnamed nonunion class type — called the closure type.<br />
+The closure type for a non-generic lambda-expression with no lambda-capture has a public non-virtual nonexplicit const conversion function to pointer to function”</p>
+</blockquote>
+
+<p><br />
+In simple words, you don’t know the type of the lambda. Yeah, well that’s hard to accept. However, as the last line in the extract suggests, this is possible:<br /></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">void</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">;};</span>
+
+<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">fn</span><span class="p">)(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">lambda</span>
+</code></pre></div></div>
+
+<p><b>But this is not: </b></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">void</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">;};</span>
+
+<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">fn</span><span class="p">)(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">lambda</span>	<span class="c1">//error no implicit conversion exists.
+</span></code></pre></div></div>
+<p><br /></p>
+
+<h3 id="capturing-stuff">Capturing Stuff</h3>
+
+<h4 id="by-value">By Value</h4>
+
+<p>There are certain ways in which you can capture stuff. As is evident from the conversion to a functor which I just showed, the variable’s value got copied:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]()</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">;</span> <span class="p">};</span>	<span class="c1">//value of a gets copied
+</span></code></pre></div></div>
+<p><br />
+The variable in our “conceptual” functor (that is created due to the lambda), is assigned the value of the variable a. This is a potential overhead. However, just so you know, that’s totally possible.
+<br />
+If you wanted to copy all the variables defined outside, you could just place an <code>=</code> sign inside the capture list:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">d</span><span class="p">;</span> <span class="p">};</span>		<span class="c1">//all values are copied
+</span><span class="n">lambda</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>The “conceptual” functor in this case would be something like:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">functor</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+	<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+	<span class="n">functor</span><span class="p">(</span><span class="kt">int</span> <span class="n">_a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_d</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">(</span><span class="n">_a</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="n">_b</span><span class="p">),</span> <span class="n">c</span><span class="p">(</span><span class="n">_c</span><span class="p">),</span> <span class="n">d</span><span class="p">(</span><span class="n">_d</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="p">}</span>
+	<span class="kt">void</span> <span class="k">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">d</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+<h4 id="by-reference">By reference</h4>
+
+<p>You can easily do this inside lambdas:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">a</span><span class="p">](){</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;++</span><span class="n">a</span><span class="p">;};</span>	
+<span class="n">lambda</span><span class="p">()</span>	<span class="c1">//3
+</span></code></pre></div></div>
+<p><br />
+Wait, what? I didn’t add <code>mutable</code> to the lambda. How did it change a?!?
+<br />
+<br /></p>
+
+<p>The reason can be easily understood if we look at the functor for the above lambda:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">functor</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_a</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+	<span class="n">functor</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">_a</span><span class="p">)</span> <span class="o">:</span> <span class="n">m_a</span><span class="p">(</span><span class="n">_a</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="k">operator</span><span class="p">()()</span> <span class="k">const</span> <span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">m_a</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>For those who understood, nice. For those who didn’t, your question might be something like:</p>
+
+<p><i><b>
+“I am changing <code>m_a</code> even though the function is <code>const</code>. How is that possible?”
+</b></i></p>
+
+<p><br />
+Think about it like this, you aren’t changing the reference. You are changing the value of what the reference is referring to. 
+<br />
+Or think about it with a pointer notation. If it were a pointer, you wouldn’t be changing what the pointer is pointing to, you are changing the value of the variable that is being pointed to.</p>
+
+<p><br /></p>
+
+<p>Now if you wanted all of the variables to be captured by reference, you could just do this:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](){</span>
+		<span class="n">b</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">};</span>
+	<span class="n">lambda</span><span class="p">();</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">;</span>	<span class="c1">//3
+</span></code></pre></div></div>
+<p><br />
+I guess you can now make the functor for this lambda by yourself…</p>
+
+<p><b>
+NOTE: If you don’t specify anything inside the capture list, the default action is to provide no access to variables. You can think that it means there will be no member variables in the functor…
+</b></p>
+
+<p><br /></p>
+
+<h3 id="mixed-captures">Mixed Captures</h3>
+<p>These are very possible:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+	<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+	<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">b</span><span class="p">]()</span> <span class="p">{</span>
+		<span class="c1">//this lambda copies values of every variable except b
+</span>	<span class="p">};</span>
+
+	<span class="k">auto</span> <span class="n">lambda2</span> <span class="o">=</span> <span class="p">[</span><span class="o">=</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">]</span> <span class="p">{</span>
+		<span class="c1">//only a is copied
+</span>	<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h3 id="lambda-init-captures--c14">Lambda Init Captures – C++14</h3>
+
+<p>Since C++14 you can initialise the variables of the lambda (the member variables of the ‘conceptual’ functor) inside the capture list:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span><span class="o">=</span><span class="mi">2</span><span class="p">]()</span> <span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">g</span><span class="p">;</span>
+	<span class="p">};</span>
+
+	<span class="n">lambda</span><span class="p">();</span>	<span class="c1">//2
+</span></code></pre></div></div>
+
+<p><code>g</code> is initialised to 2 as it can be seen. Another great example for clearing this part out is the one from the standard(I changed it a little):</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">]()</span><span class="o">-&gt;</span><span class="kt">int</span> <span class="p">{</span>
+            <span class="n">r</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">;</span>
+         <span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">y</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Let’s disccus, step-by-step, what might have happened here:</p>
+
+<ul>
+  <li>A variable <code>r</code> which is a reference to the actual variable <code>x</code> is created as a member variable of the ‘conceptual’ functor.</li>
+  <li>Another variable <code>x</code> is created as a member variable which has the value of <code>x+2</code> (The <code>x</code> here is the one initialised on the first line..) i.e. 6.</li>
+  <li>The reference <code>r</code> changes the value of the real<code>x</code> to <code>x+2</code> i.e. 
+<code>4+2 = 6</code>.</li>
+  <li>The lambda returns the value of <code>x+3</code>. Here the x is the member variable. Hence the lambda returns 9.</li>
+  <li>Now forget about the ‘conceptual’ functor.</li>
+  <li>Hence, <code>s</code> is assigned the value of 9.</li>
+  <li><code>x</code> changes to 6.</li>
+</ul>
+
+<h3 id="a-talk-about-globals-and-statics">A talk about Globals and Statics</h3>
+
+<p>Global and static variables don’t need to be captured. They are already available to the lambda. This is totally valid C++:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="k">static</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+
+	<span class="p">[]()</span> <span class="p">{</span>
+		<span class="n">x</span><span class="o">++</span><span class="p">;</span>
+		<span class="n">y</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="p">}();</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>A name in the lambda-capture shall be in scope in the context of the lambda expression, and shall be <code>this</code> or refer to a local variable or reference with automatic storage duration.</p>
+</blockquote>
+
+<p>Phew, that was a lot of talk only about captures!
+<br /></p>
+
+<h2 id="anonymous-lambdas">Anonymous Lambdas</h2>
+
+<p>A Lambda which isn’t named is called an anonymous lambda. Calling such Lambdas can be done on the very same line like so:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[](){</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Hmm"</span><span class="p">;}();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="understanding-why-lambdas-are-not-totally-functors">Understanding why Lambdas are not totally functors.</h2>
+
+<p>If I would have to say in a sentence, Lambdas are inline functors. They are inlined in the function they are created. Or more specifically, their ‘constructors’…</p>
+
+<p>Let’s infer this from some assembly. Don’t worry, you don’t need to go and understand Assembly… I will explain anything if required…</p>
+
+<p>We will take this sample code:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">functor</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_a</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+	<span class="n">functor</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">_a</span><span class="p">)</span> <span class="o">:</span> <span class="n">m_a</span><span class="p">(</span><span class="n">_a</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="k">operator</span><span class="p">()()</span> <span class="k">const</span> <span class="p">{</span>
+		<span class="n">m_a</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+	<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+
+	<span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span>
+		<span class="n">a</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}();</span>
+
+	<span class="n">functor</span> <span class="n">functor</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+	<span class="n">functor</span><span class="p">();</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>You can use <a href="https://godbolt.org/">Compiler Explorer</a> to check the assembly. I am gonna show the demangled code to you (the code where the names of the functions weren’t changed by the compiler):</p>
+
+<p>Let’s see what we get, part by part.</p>
+
+<p>These are the definitions of the constructor and the operator overload of the functor class respectively:<br />
+(Don’t worry about the code inside, we won’t be talking about registers at all):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>functor::functor(int&amp;):
+        push    rbp
+        mov     rbp, rsp
+        mov     QWORD PTR [rbp-8], rdi
+        mov     QWORD PTR [rbp-16], rsi
+        mov     rax, QWORD PTR [rbp-8]
+        mov     rdx, QWORD PTR [rbp-16]
+        mov     QWORD PTR [rax], rdx
+        nop
+        pop     rbp
+        ret
+functor::operator()() const:
+        push    rbp
+        mov     rbp, rsp
+        mov     QWORD PTR [rbp-8], rdi
+        mov     rax, QWORD PTR [rbp-8]
+        mov     rax, QWORD PTR [rax]
+        mov     edx, DWORD PTR [rax]
+        add     edx, 1
+        mov     DWORD PTR [rax], edx
+        nop
+        pop     rbp
+        ret
+</code></pre></div></div>
+
+<p>Coming to the lambda, this is what we get:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main::{lambda()#1}::operator()() const:
+        push    rbp
+        mov     rbp, rsp
+        mov     QWORD PTR [rbp-8], rdi
+        mov     rax, QWORD PTR [rbp-8]
+        mov     rax, QWORD PTR [rax]
+        mov     edx, DWORD PTR [rax]
+        add     edx, 1
+        mov     DWORD PTR [rax], edx
+        nop
+        pop     rbp
+        ret
+</code></pre></div></div>
+
+<p>The definition of the lambda call is the same as that of the overload of the functor.</p>
+
+<p>Now, you might ask where is the constructor for it? Let’s go to <code>main</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	main:
+ 1       push    rbp
+ 2       mov     rbp, rsp
+ 3       sub     rsp, 32
+ 4       mov     DWORD PTR [rbp-12], 9
+ 5       lea     rax, [rbp-12]
+ 6       mov     QWORD PTR [rbp-8], rax
+ 7       lea     rax, [rbp-8]
+ 8       mov     rdi, rax
+ 9       call    main::{lambda()#1}::operator()() const
+10       lea     rdx, [rbp-12]
+11       lea     rax, [rbp-24]
+12       mov     rsi, rdx
+13       mov     rdi, rax
+14       call    functor::functor(int&amp;)
+15       lea     rax, [rbp-24]
+16       mov     rdi, rax
+17       call    functor::operator()() const
+18       mov     eax, 0
+19       leave
+20       ret
+</code></pre></div></div>
+
+<p>Line 5 to Line 8 is where the constructor part gets done for the lambda.
+The <code>this</code> pointer for the lambda is the address 0x08.</p>
+
+<p>Lines 10 to 14 get the set up of the functor done. The address of the functor’s <code>this</code> is at 0x24.
+Also notice that this involves a call to the functor’s constructor as well…</p>
+
+<blockquote>
+  <p>Do note that the assembly code is unoptimized, I didn’t wanna change anything and show you whatever was there… For example, it loads stuff into registers without any reason instead of moving them…</p>
+</blockquote>
+
+<h2 id="generic-lambdas--c-14">Generic Lambdas – C++ 14</h2>
+
+<p>The last topic of discussion and I will be done. I am sick of typing and editing so much of text… But I will do it for you : )</p>
+
+<p>The parameters of a lambda, starting from C++14 can be generic. However, this doesn’t involve typing 
+<code>template &lt;typename T&gt;</code> anywhere. You just place the <code>auto</code> keyword in front of the parameters:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">auto</span> <span class="n">print</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">(</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">&lt;&lt;</span><span class="s">" &amp; "</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="p">;</span> <span class="p">};</span>
+
+</code></pre></div></div>
+
+<p>It is to be noted that this does transform to a functor somewhat like this:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">NameByCompilerrrrrrrr</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+    <span class="n">T</span> <span class="k">operator</span> <span class="p">()</span> <span class="p">(</span><span class="n">T1</span> <span class="n">a</span><span class="p">,</span> <span class="n">T2</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">&lt;&lt;</span><span class="s">" &amp; "</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>For a generic lambda, the closure type has a public inline function call operator member template whose template-parameter-list consists of one invented type template-parameter for each occurrence of auto in the lambda’s parameter-declaration-clause, in order of appearance.</p>
+</blockquote>
+
+<p>And with that being said, you now know almost everything about lambdas! Thank you for joining this discussion with me!</p>
+
+<p><br /></p>
+<hr />
+
+<p><a href="https://unsplash.com/@jjying">Credits to JJYING</a> for the background.</p>
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="http://localhost:4000/tags/#cpp" title="Pages tagged cpp" class="tag"><span class="term">cpp</span></a><a href="http://localhost:4000/tags/#c++" title="Pages tagged c++" class="tag"><span class="term">c++</span></a><a href="http://localhost:4000/tags/#lambdas" title="Pages tagged lambdas" class="tag"><span class="term">lambdas</span></a><a href="http://localhost:4000/tags/#lambda" title="Pages tagged lambda" class="tag"><span class="term">lambda</span></a><a href="http://localhost:4000/tags/#functor" title="Pages tagged functor" class="tag"><span class="term">functor</span></a><a href="http://localhost:4000/tags/#function" title="Pages tagged function" class="tag"><span class="term">function</span></a><a href="http://localhost:4000/tags/#pointers" title="Pages tagged pointers" class="tag"><span class="term">pointers</span></a></span>
+        
+        <div class="social-share">
+  <ul class="socialcount socialcount-small inline-list">
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/the-essence-of-lambdas-in-c/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://localhost:4000/the-essence-of-lambdas-in-c/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+  </ul>
+</div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2019 Siddhanth Bhowmick</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+	        
+
+</body>
+</html>
