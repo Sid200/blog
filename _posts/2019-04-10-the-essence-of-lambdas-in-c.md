@@ -12,9 +12,9 @@ tags:
 - function
 - pointers
 image:
-  path: /images/LambdasInCPP/lambdas-in-cpp.png
+  path: /images/LambdasInCPP/lambdas-in-cpp.jpg
   background: LambdasInCPP/bg.jpg
-  feature: LambdasInCPP/lambdas-in-cpp.png
+  feature: LambdasInCPP/lambdas-in-cpp.jpg
   credit: Myself :P
   creditlink: 
 date: 2019-04-10 19:51 +0000
