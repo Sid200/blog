@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-14T04:22:19-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sid’s Blog</title><subtitle>A blog which is owned by a tech enthusiast and a Science-bitten person</subtitle><entry><title type="html">The Essence of Lambdas in C++</title><link href="http://localhost:4000/the-essence-of-lambdas-in-c/" rel="alternate" type="text/html" title="The Essence of Lambdas in C++" /><published>2019-04-10T15:51:00-04:00</published><updated>2019-04-10T15:51:00-04:00</updated><id>http://localhost:4000/the-essence-of-lambdas-in-c</id><content type="html" xml:base="http://localhost:4000/the-essence-of-lambdas-in-c/">&lt;h1 id=&quot;hello-there&quot;&gt;Hello there!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-16T09:24:43-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sid’s Blog</title><subtitle>A blog which is owned by a tech enthusiast and a Science-bitten person</subtitle><entry><title type="html">The Essence of Lambdas in C++</title><link href="http://localhost:4000/the-essence-of-lambdas-in-c/" rel="alternate" type="text/html" title="The Essence of Lambdas in C++" /><published>2019-04-10T15:51:00-04:00</published><updated>2019-04-10T15:51:00-04:00</updated><id>http://localhost:4000/the-essence-of-lambdas-in-c</id><content type="html" xml:base="http://localhost:4000/the-essence-of-lambdas-in-c/">&lt;h1 id=&quot;hello-there&quot;&gt;Hello there!&lt;/h1&gt;
 
-&lt;p&gt;This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I though because I didn’t know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using was well, as you may have guessed, using that. Not only that, I didn’t know anything about how Ruby, it’s “GEMS” worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.&lt;/p&gt;
+&lt;p&gt;This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I thought because I didn’t know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using as well, as you may have guessed, using that. Not only that, I didn’t know anything about how Ruby, it’s “GEMS” worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.&lt;/p&gt;
 
 &lt;p&gt;Anyways, let’s get on to the topic of discussion.&lt;/p&gt;
 
@@ -185,8 +185,8 @@ However, there is a small difference which we will be talking about a little lat
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;The &lt;b&gt;[ ]&lt;/b&gt;: This thingy represents a capture list. By default a lamda can’t access any variable 
-(other than the ones initialised/declared inside it or passed as params). Modifications on the Capture List help us to tell it how to “capture” the variables…&lt;/p&gt;
+    &lt;p&gt;The &lt;b&gt;[ ]&lt;/b&gt;: This thingy represents a capture list. By default, a lambda can’t access any variable 
+(other than the ones initialized/declared inside it or passed as params). Modifications on the Capture List help us to tell it how to “capture” the variables…&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The &lt;b&gt;( )&lt;/b&gt; is nothing but simply a parameter encloser… You write all the parameters inside this which are to be passed when you “call” the lambda… If there are no parameters, you can exclude the parenthesis.&lt;/p&gt;
@@ -241,7 +241,7 @@ A &lt;b&gt;Lambda&lt;/b&gt; is an object which is callable. Just like a function
 
 &lt;p&gt;By default, the operator overload that happens for the class of the lambda is said to be &lt;b&gt;&lt;i&gt;const&lt;/i&gt;&lt;/b&gt;
 The code above shows how… This means that the lambda cannot modify its object’s member variables… &lt;br /&gt;
-(in this case there aren’t any).&lt;/p&gt;
+(in this case, there aren’t any).&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;Let’s look at another example that shows the use of member variables.&lt;/p&gt;
 
@@ -446,7 +446,7 @@ NOTE: If you don’t specify anything inside the capture list, the default actio
 
 &lt;h3 id=&quot;lambda-init-captures--c14&quot;&gt;Lambda Init Captures – C++14&lt;/h3&gt;
 
-&lt;p&gt;Since C++14 you can initialise the variables of the lambda (the member variables of the ‘conceptual’ functor) inside the capture list:&lt;/p&gt;
+&lt;p&gt;Since C++14 you can initialize the variables of the lambda (the member variables of the ‘conceptual’ functor) inside the capture list:&lt;/p&gt;
 
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -500,7 +500,7 @@ NOTE: If you don’t specify anything inside the capture list, the default actio
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;A name in the lambda-capture shall be in scope in the context of the lambda expression, and shall be &lt;code&gt;this&lt;/code&gt; or refer to a local variable or reference with automatic storage duration.&lt;/p&gt;
+  &lt;p&gt;A name in the lambda-capture shall be in scope in the context of the lambda expression and shall be &lt;code&gt;this&lt;/code&gt; or refer to a local variable or reference with automatic storage duration.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Phew, that was a lot of talk only about captures!
@@ -508,7 +508,7 @@ NOTE: If you don’t specify anything inside the capture list, the default actio
 
 &lt;h2 id=&quot;anonymous-lambdas&quot;&gt;Anonymous Lambdas&lt;/h2&gt;
 
-&lt;p&gt;A Lambda which isn’t named is called an anonymous lambda. Calling such Lambdas can be done on the very same line like so:&lt;/p&gt;
+&lt;p&gt;A Lambda which isn’t named is called an anonymous lambda. Calling such Lambdas can be done on the very same line as such:&lt;/p&gt;
 
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[](){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hmm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -633,7 +633,7 @@ functor::operator()() const:
 The &lt;code&gt;this&lt;/code&gt; pointer for the lambda is the address 0x08.&lt;/p&gt;
 
 &lt;p&gt;Lines 10 to 14 get the set up of the functor done. The address of the functor’s &lt;code&gt;this&lt;/code&gt; is at 0x24.
-Also notice that this involves a call to the functor’s constructor as well…&lt;/p&gt;
+Also, notice that this involves a call to the functor’s constructor as well…&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Do note that the assembly code is unoptimized, I didn’t wanna change anything and show you whatever was there… For example, it loads stuff into registers without any reason instead of moving them…&lt;/p&gt;
@@ -667,6 +667,4 @@ Also notice that this involves a call to the functor’s constructor as well…&
 &lt;p&gt;And with that being said, you now know almost everything about lambdas! Thank you for joining this discussion with me!&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://unsplash.com/@jjying&quot;&gt;Credits to JJYING&lt;/a&gt; for the background.&lt;/p&gt;</content><author><name></name></author><category term="cpp" /><category term="c++" /><category term="lambdas" /><category term="lambda" /><category term="functor" /><category term="function" /><category term="pointers" /><summary type="html">Hello there!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/LambdasInCPP/lambdas-in-cpp.jpg" /></entry></feed>
+&lt;hr /&gt;</content><author><name></name></author><category term="cpp" /><category term="c++" /><category term="lambdas" /><category term="lambda" /><category term="functor" /><category term="function" /><category term="pointers" /><summary type="html">Hello there!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/LambdasInCPP/lambdas-in-cpp.jpg" /></entry></feed>
