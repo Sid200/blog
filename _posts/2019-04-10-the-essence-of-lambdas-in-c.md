@@ -21,7 +21,7 @@ date: 2019-04-10 19:51 +0000
 ---
 # Hello there!
 
-This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I though because I didn't know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using was well, as you may have guessed, using that. Not only that, I didn't know anything about how Ruby, it's "GEMS" worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.
+This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I thought because I didn't know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using as well, as you may have guessed, using that. Not only that, I didn't know anything about how Ruby, it's "GEMS" worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.
 
 Anyways, let's get on to the topic of discussion.
 
@@ -208,8 +208,8 @@ Alright, so first up is how to write one? A basic lambda declaration to print "H
 
 What I just showed above is an example of a complete lambda. Let's have a brief overview of each of these parts and then we will discuss whatever is important in deep:
 
-* The <b>[ ]</b>: This thingy represents a capture list. By default a lamda can't access any variable 
-(other than the ones initialised/declared inside it or passed as params). Modifications on the Capture List help us to tell it how to "capture" the variables...
+* The <b>[ ]</b>: This thingy represents a capture list. By default, a lambda can't access any variable 
+(other than the ones initialized/declared inside it or passed as params). Modifications on the Capture List help us to tell it how to "capture" the variables...
 
 * The <b>( )</b> is nothing but simply a parameter encloser... You write all the parameters inside this which are to be passed when you "call" the lambda... If there are no parameters, you can exclude the parenthesis.
 
@@ -261,7 +261,7 @@ int main(){
 
 By default, the operator overload that happens for the class of the lambda is said to be <b><i>const</i></b>
 The code above shows how... This means that the lambda cannot modify its object's member variables... <br>
-(in this case there aren't any).
+(in this case, there aren't any).
 
 <br>Let's look at another example that shows the use of member variables.
 
@@ -476,7 +476,7 @@ These are very possible:
 
 ### Lambda Init Captures -- C++14
 
-Since C++14 you can initialise the variables of the lambda (the member variables of the 'conceptual' functor) inside the capture list:
+Since C++14 you can initialize the variables of the lambda (the member variables of the 'conceptual' functor) inside the capture list:
 
 ```cpp
 	auto lambda = [g=2]() {
@@ -530,14 +530,14 @@ static int y = 9;
 }
 ```
 
->A name in the lambda-capture shall be in scope in the context of the lambda expression, and shall be <code>this</code> or refer to a local variable or reference with automatic storage duration.
+>A name in the lambda-capture shall be in scope in the context of the lambda expression and shall be <code>this</code> or refer to a local variable or reference with automatic storage duration.
 
 Phew, that was a lot of talk only about captures!
 <br>
 
 ## Anonymous Lambdas
 
-A Lambda which isn't named is called an anonymous lambda. Calling such Lambdas can be done on the very same line like so:
+A Lambda which isn't named is called an anonymous lambda. Calling such Lambdas can be done on the very same line as such:
 
 ```cpp
 [](){std::cout<<"Hmm";}();
@@ -667,7 +667,7 @@ Line 5 to Line 8 is where the constructor part gets done for the lambda.
 The <code>this</code> pointer for the lambda is the address 0x08.
 
 Lines 10 to 14 get the set up of the functor done. The address of the functor's <code>this</code> is at 0x24.
-Also notice that this involves a call to the functor's constructor as well...
+Also, notice that this involves a call to the functor's constructor as well...
 
 > Do note that the assembly code is unoptimized, I didn't wanna change anything and show you whatever was there... For example, it loads stuff into registers without any reason instead of moving them...
 
@@ -700,4 +700,3 @@ And with that being said, you now know almost everything about lambdas! Thank yo
 
 <br>
 <hr>
-[Credits to JJYING](https://unsplash.com/@jjying) for the background.

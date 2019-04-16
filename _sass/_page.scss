@@ -271,7 +271,7 @@ header .entry-meta {
 #page {
 
 	.entry-content {
-		margin: 40px 2px 20px 2px;
+		margin: 40px 25px 20px 25px;
 		padding: 10px 15px;
 		background-color: #fff;
 		box-shadow: 0 0 0 0, 0 6px 12px rgba(#000,0.1);
@@ -284,33 +284,13 @@ header .entry-meta {
 		}
 
 		@media #{$large} {
-			max-width: 800px;
+			max-width: 80%;
 			margin: 50px auto 30px auto;
 			padding: 50px 80px;
 
 			> p:first-child {
 				@include font-size(20);
 			}
-		}
-	}
-
-	#disqus_thread {
-		margin: 40px 2px 20px 2px;
-		padding: 10px 15px;
-		background-color: #fff;
-		box-shadow: 0 0 0 1px rgba($border-color,0.1), 0 6px 12px rgba(#000,0.1);
-		border-radius: 3px;
-
-		@media #{$medium} {
-			margin-left: 10px;
-			margin-right: 10px;
-			padding: 20px 30px;
-		}
-
-		@media #{$large} {
-			max-width: 800px;
-			padding: 50px 80px;
-			margin: 0 auto 30px auto;
 		}
 	}
 

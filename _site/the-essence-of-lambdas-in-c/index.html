@@ -140,7 +140,7 @@ Reading time ~14 minutes
     <div class="entry-content">
       <h1 id="hello-there">Hello there!</h1>
 
-<p>This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I though because I didn’t know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using was well, as you may have guessed, using that. Not only that, I didn’t know anything about how Ruby, it’s “GEMS” worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.</p>
+<p>This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I thought because I didn’t know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using as well, as you may have guessed, using that. Not only that, I didn’t know anything about how Ruby, it’s “GEMS” worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.</p>
 
 <p>Anyways, let’s get on to the topic of discussion.</p>
 
@@ -325,8 +325,8 @@ However, there is a small difference which we will be talking about a little lat
 
 <ul>
   <li>
-    <p>The <b>[ ]</b>: This thingy represents a capture list. By default a lamda can’t access any variable 
-(other than the ones initialised/declared inside it or passed as params). Modifications on the Capture List help us to tell it how to “capture” the variables…</p>
+    <p>The <b>[ ]</b>: This thingy represents a capture list. By default, a lambda can’t access any variable 
+(other than the ones initialized/declared inside it or passed as params). Modifications on the Capture List help us to tell it how to “capture” the variables…</p>
   </li>
   <li>
     <p>The <b>( )</b> is nothing but simply a parameter encloser… You write all the parameters inside this which are to be passed when you “call” the lambda… If there are no parameters, you can exclude the parenthesis.</p>
@@ -381,7 +381,7 @@ A <b>Lambda</b> is an object which is callable. Just like a function. Lambdas wh
 
 <p>By default, the operator overload that happens for the class of the lambda is said to be <b><i>const</i></b>
 The code above shows how… This means that the lambda cannot modify its object’s member variables… <br />
-(in this case there aren’t any).</p>
+(in this case, there aren’t any).</p>
 
 <p><br />Let’s look at another example that shows the use of member variables.</p>
 
@@ -586,7 +586,7 @@ NOTE: If you don’t specify anything inside the capture list, the default actio
 
 <h3 id="lambda-init-captures--c14">Lambda Init Captures – C++14</h3>
 
-<p>Since C++14 you can initialise the variables of the lambda (the member variables of the ‘conceptual’ functor) inside the capture list:</p>
+<p>Since C++14 you can initialize the variables of the lambda (the member variables of the ‘conceptual’ functor) inside the capture list:</p>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span><span class="o">=</span><span class="mi">2</span><span class="p">]()</span> <span class="p">{</span>
 		<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">g</span><span class="p">;</span>
@@ -640,7 +640,7 @@ NOTE: If you don’t specify anything inside the capture list, the default actio
 </code></pre></div></div>
 
 <blockquote>
-  <p>A name in the lambda-capture shall be in scope in the context of the lambda expression, and shall be <code>this</code> or refer to a local variable or reference with automatic storage duration.</p>
+  <p>A name in the lambda-capture shall be in scope in the context of the lambda expression and shall be <code>this</code> or refer to a local variable or reference with automatic storage duration.</p>
 </blockquote>
 
 <p>Phew, that was a lot of talk only about captures!
@@ -648,7 +648,7 @@ NOTE: If you don’t specify anything inside the capture list, the default actio
 
 <h2 id="anonymous-lambdas">Anonymous Lambdas</h2>
 
-<p>A Lambda which isn’t named is called an anonymous lambda. Calling such Lambdas can be done on the very same line like so:</p>
+<p>A Lambda which isn’t named is called an anonymous lambda. Calling such Lambdas can be done on the very same line as such:</p>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[](){</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Hmm"</span><span class="p">;}();</span>
 </code></pre></div></div>
@@ -773,7 +773,7 @@ functor::operator()() const:
 The <code>this</code> pointer for the lambda is the address 0x08.</p>
 
 <p>Lines 10 to 14 get the set up of the functor done. The address of the functor’s <code>this</code> is at 0x24.
-Also notice that this involves a call to the functor’s constructor as well…</p>
+Also, notice that this involves a call to the functor’s constructor as well…</p>
 
 <blockquote>
   <p>Do note that the assembly code is unoptimized, I didn’t wanna change anything and show you whatever was there… For example, it loads stuff into registers without any reason instead of moving them…</p>
@@ -809,7 +809,6 @@ Also notice that this involves a call to the functor’s constructor as well…<
 <p><br /></p>
 <hr />
 
-<p><a href="https://unsplash.com/@jjying">Credits to JJYING</a> for the background.</p>
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="http://localhost:4000/tags/#cpp" title="Pages tagged cpp" class="tag"><span class="term">cpp</span></a><a href="http://localhost:4000/tags/#c++" title="Pages tagged c++" class="tag"><span class="term">c++</span></a><a href="http://localhost:4000/tags/#lambdas" title="Pages tagged lambdas" class="tag"><span class="term">lambdas</span></a><a href="http://localhost:4000/tags/#lambda" title="Pages tagged lambda" class="tag"><span class="term">lambda</span></a><a href="http://localhost:4000/tags/#functor" title="Pages tagged functor" class="tag"><span class="term">functor</span></a><a href="http://localhost:4000/tags/#function" title="Pages tagged function" class="tag"><span class="term">function</span></a><a href="http://localhost:4000/tags/#pointers" title="Pages tagged pointers" class="tag"><span class="term">pointers</span></a></span>
