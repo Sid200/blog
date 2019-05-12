@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-12T08:54:19-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sid’s Blog</title><subtitle>A blog which is owned by a tech enthusiast and a Science-bitten person</subtitle><entry><title type="html">Computer Bugs, an example to prove nomenclature for anything is not bad</title><link href="http://localhost:4000/computer-bugs-how-it-happened/" rel="alternate" type="text/html" title="Computer Bugs, an example to prove nomenclature for anything is not bad" /><published>2019-05-12T08:54:00-04:00</published><updated>2019-05-12T08:54:00-04:00</updated><id>http://localhost:4000/computer-bugs-how-it-happened</id><content type="html" xml:base="http://localhost:4000/computer-bugs-how-it-happened/">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-12T17:14:48-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sid’s Blog</title><subtitle>A blog which is owned by a tech enthusiast and a Science-bitten person</subtitle><entry><title type="html">Computer Bugs, an example to prove nomenclature for anything is not bad</title><link href="http://localhost:4000/computer-bugs-how-it-happened/" rel="alternate" type="text/html" title="Computer Bugs, an example to prove nomenclature for anything is not bad" /><published>2019-05-12T08:54:00-04:00</published><updated>2019-05-12T08:54:00-04:00</updated><id>http://localhost:4000/computer-bugs-how-it-happened</id><content type="html" xml:base="http://localhost:4000/computer-bugs-how-it-happened/">&lt;blockquote&gt;
   &lt;p&gt;This one is probably gonna be a short one, I’d rather say it is a compensation for the fact that I didn’t write a blog post for a long time.&lt;/p&gt;
 
   &lt;p&gt;The reason, is well, I didn’t have time. And those time consuming factors are a lot so I better not speak about them.&lt;/p&gt;
@@ -318,7 +318,7 @@ A &lt;b&gt;Lambda&lt;/b&gt; is an object which is callable. Just like a function
 
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
 
-	&lt;span class=&quot;n&quot;&gt;_ZZ4mainENKUliE_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()();&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;_ZZ4mainENKUliE_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
 	&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -370,7 +370,6 @@ The code above shows how… This means that the lambda cannot modify its object�
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
 
 	&lt;span class=&quot;n&quot;&gt;_ZZ4mainENKUliE_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;_ZZ4mainENKUliE_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
 	&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
