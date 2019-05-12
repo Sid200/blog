@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-16T09:24:43-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sid’s Blog</title><subtitle>A blog which is owned by a tech enthusiast and a Science-bitten person</subtitle><entry><title type="html">The Essence of Lambdas in C++</title><link href="http://localhost:4000/the-essence-of-lambdas-in-c/" rel="alternate" type="text/html" title="The Essence of Lambdas in C++" /><published>2019-04-10T15:51:00-04:00</published><updated>2019-04-10T15:51:00-04:00</updated><id>http://localhost:4000/the-essence-of-lambdas-in-c</id><content type="html" xml:base="http://localhost:4000/the-essence-of-lambdas-in-c/">&lt;h1 id=&quot;hello-there&quot;&gt;Hello there!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-12T08:54:19-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sid’s Blog</title><subtitle>A blog which is owned by a tech enthusiast and a Science-bitten person</subtitle><entry><title type="html">Computer Bugs, an example to prove nomenclature for anything is not bad</title><link href="http://localhost:4000/computer-bugs-how-it-happened/" rel="alternate" type="text/html" title="Computer Bugs, an example to prove nomenclature for anything is not bad" /><published>2019-05-12T08:54:00-04:00</published><updated>2019-05-12T08:54:00-04:00</updated><id>http://localhost:4000/computer-bugs-how-it-happened</id><content type="html" xml:base="http://localhost:4000/computer-bugs-how-it-happened/">&lt;blockquote&gt;
+  &lt;p&gt;This one is probably gonna be a short one, I’d rather say it is a compensation for the fact that I didn’t write a blog post for a long time.&lt;/p&gt;
+
+  &lt;p&gt;The reason, is well, I didn’t have time. And those time consuming factors are a lot so I better not speak about them.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;what-is-a-bug&quot;&gt;What is a bug?&lt;/h1&gt;
+
+&lt;p&gt;I mean specifically, or literally it is a biological being (as per my knowledge of my most hated subject). But what is a &lt;strong&gt;computer bug&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;The thing is that most of you who would normally ready my posts would be programmers (I don’t even know whether somebody is even reading this, and I am yet to make the notification system and probably the &lt;em&gt;commenting system&lt;/em&gt;). And you would know that a bug is nothing but an unwanted error in your code which changes the behaviour of your output, binary or whatever…&lt;/p&gt;
+
+&lt;p&gt;Yeah that’s right. That is what it is. And we are done. Bye!&lt;/p&gt;
+
+&lt;p&gt;Just joking. I wasn’t here to just discuss what it is. Instead, discuss why it is. Why not any other name? Why is this thing called a bug?&lt;/p&gt;
+
+&lt;p&gt;I usually consider that &lt;em&gt;Computer Terminologies&lt;/em&gt; are logical. Because I feel that I can know what a particular thing means (be it an abbreviation or whatever) if I know the subcontext (the context is Computers obviously). The thing is though, that we are all humans and sometimes we come up with names based on incidents or sometimes just some &lt;strong&gt;silly&lt;/strong&gt; name.&lt;/p&gt;
+
+&lt;p&gt;In the case of &lt;em&gt;Computer Bugs&lt;/em&gt;, it was an incident (or a couple of them).&lt;/p&gt;
+
+&lt;h1 id=&quot;the-incidents&quot;&gt;The Incident(s)&lt;/h1&gt;
+
+&lt;p&gt;You see, we didn’t really start of &lt;em&gt;simple&lt;/em&gt; (that is obviously a mockery). Early computers didn’t just run on the principle of transistors(which utilise a little bit of quantum physics to work) but instead we had &lt;strong&gt;Relays&lt;/strong&gt;. These things worked on the principle of electromagnetism to produce the behaviour of a switch (for which a transitor is needed).&lt;/p&gt;
+
+&lt;p&gt;Now, I could explain the working of a transistor but it deserves its own post (and it is quite long as well), so I will keep it in my &lt;strong&gt;BLOG TODO&lt;/strong&gt; for now.&lt;/p&gt;
+
+&lt;h2 id=&quot;relays-the-source-to-all-of-the-bugs&quot;&gt;Relays: The source to all of the *bugs*&lt;/h2&gt;
+
+&lt;p&gt;Relays are simple and if you know a little bit about electricity and magnetism, you can understand how they are supposed to work.&lt;/p&gt;
+
+&lt;p&gt;If you don’t, skim over this part, it is not really required (just understand that they are switches that allow the flow of current and stuff….)&lt;/p&gt;
+
+&lt;p&gt;There is a wire, that is cut from middle (you can say) and a coil is placed nearby (from a fair distance from the cut end). Which is then again connected to a control wire.&lt;/p&gt;
+
+&lt;p&gt;Electrcity is allowed to flow from the first cut part. But as the circuit is open (the thing is cut remember?), the flow of charge halts at the end.&lt;/p&gt;
+
+&lt;p&gt;If we want the current, we just pass some current to the coil (through the &lt;strong&gt;control wire&lt;/strong&gt;) and the magic happens (magnetism), the cut bent part gets attracted and completes the circuit.&lt;/p&gt;
+
+&lt;p&gt;That’s the working of a Relay.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a very simple representation, please do keep that in mind.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now, to the problem(s).&lt;/p&gt;
+
+&lt;p&gt;In simple words, the machines were huge and some parts were rarely accessible. Sometimes things didn’t work as they were supposed even before the equipments were supposed to expire.&lt;/p&gt;
+
+&lt;p&gt;People freaked out, some got to know that it was &lt;u&gt;**BUGS**&lt;/u&gt; which got in between everything and damaged the working.&lt;/p&gt;
+
+&lt;p&gt;Here is an image which reported the same:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/ComputerBugsHappening/bug.jpg&quot; alt=&quot;Bug Image&quot; title=&quot;A Moth Report&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wiki:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The term “bug” was used in an account by computer pioneer Grace Hopper, who publicized the cause of a malfunction in an early electromechanical computer.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From then on, whenever a computer didn’t work properly, people started to say that it had bugs in it. And then we just adopted the term for software.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There were many a times, people referred to bugs but I found this incident to match up with computers and hence showcased only this one…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The reason &lt;em&gt;Vaccum Tubes&lt;/em&gt; came into being is due to some contribution from this problem.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;The reason for this talk was not to compensate for my not writing blog posts stuff (well it is kinda though), but instead show you that nomenclature (be it in any field) is not really difficult. There are incidents and we use those to refer back to stuff related to them. People who aren’t aware of these usually curse people for bringing up such complex names (this was an exception though).&lt;/p&gt;
+
+&lt;p&gt;Consider the IUPAC nomenclature for stuff. If you understand that there were clashes between people finding elements and stuff, and sometimes why IUPAC did this and not that, you would love its way of naming things. I personally hated the IUPAC nomenclature for Organic Compounds. But then I got in deep, understood stuff, compared its way to the common names, and I found it to be the most logical and elegant “name maker”. The more modern we become, the easier standards we set up.&lt;/p&gt;
+
+&lt;p&gt;In short, don’t be afraid of names for some stuff. They were named so for some reason. You just need to know it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This concludes my talk, I er.. I, I don’t have anything to say.&lt;/p&gt;
+
+&lt;p&gt;Be prepared with some &lt;em&gt;energy&lt;/em&gt;, for the next topic of my next blog post is gonna be something &lt;strong&gt;&lt;em&gt;sciency&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Have a nice day!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Background Credits&lt;/strong&gt;: &lt;a href=&quot;https://unsplash.com/@adelinpreda&quot;&gt;Adelin Preda&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name></name></author><category term="computers" /><category term="bugs" /><category term="code" /><category term="error" /><category term="history" /><category term="computer" /><category term="bug" /><category term="nomenclature" /><category term="bad naming" /><category term="naming" /><category term="early computing" /><category term="relays" /><category term="switches" /><category term="mark 1" /><category term="mark 2" /><summary type="html">This one is probably gonna be a short one, I’d rather say it is a compensation for the fact that I didn’t write a blog post for a long time. The reason, is well, I didn’t have time. And those time consuming factors are a lot so I better not speak about them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/ComputerBugsHappening/header.jpg" /></entry><entry><title type="html">The Essence of Lambdas in C++</title><link href="http://localhost:4000/the-essence-of-lambdas-in-c/" rel="alternate" type="text/html" title="The Essence of Lambdas in C++" /><published>2019-04-10T15:51:00-04:00</published><updated>2019-04-10T15:51:00-04:00</updated><id>http://localhost:4000/the-essence-of-lambdas-in-c</id><content type="html" xml:base="http://localhost:4000/the-essence-of-lambdas-in-c/">&lt;h1 id=&quot;hello-there&quot;&gt;Hello there!&lt;/h1&gt;
 
 &lt;p&gt;This, well is my first post on this blog. I just want to make sure that you know that setting up this blog took way longer than I thought because I didn’t know anything about Kramdown (a superset of Markdown) and the Jekyll(the static site generator) theme that I was using as well, as you may have guessed, using that. Not only that, I didn’t know anything about how Ruby, it’s “GEMS” worked. And everything was (well maybe still is) foreign to me. So pardon me if anything gets wrong or something, I will fix stuff if that happens.&lt;/p&gt;
 

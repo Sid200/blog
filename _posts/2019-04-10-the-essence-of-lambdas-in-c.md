@@ -251,7 +251,7 @@ public:
 
 int main(){
 
-	_ZZ4mainENKUliE_()();
+	_ZZ4mainENKUliE_();
 
 	std::cin.get();
 	return 0;
@@ -305,7 +305,6 @@ public:
 int main(){
 
 	_ZZ4mainENKUliE_(2);
-	_ZZ4mainENKUliE_();
 
 	std::cin.get();
 	return 0;
