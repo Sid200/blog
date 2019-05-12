@@ -371,7 +371,7 @@ A <b>Lambda</b> is an object which is callable. Just like a function. Lambdas wh
 
 <span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
 
-	<span class="n">_ZZ4mainENKUliE_</span><span class="p">()();</span>
+	<span class="n">_ZZ4mainENKUliE_</span><span class="p">();</span>
 
 	<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -423,7 +423,6 @@ The code above shows how… This means that the lambda cannot modify its object�
 <span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
 
 	<span class="n">_ZZ4mainENKUliE_</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-	<span class="n">_ZZ4mainENKUliE_</span><span class="p">();</span>
 
 	<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -837,6 +836,34 @@ Also, notice that this involves a call to the functor’s constructor as well…
 </div><!-- /.read-more -->
   </article>
 </div><!-- /#main -->
+
+<h3>Post a comment:</h3>
+<form method="POST" action="https://dev.staticman.net/v3/entry/sid200/blog/master">
+
+  <input name="options[redirect]" type="hidden" value="htpps://sid200.github.io/blog/http://localhost:4000">
+
+  <input name="options[slug]" type="hidden" value="the-essence-of-lambdas-in-c">
+  <div>
+    <legend>Name</legend>
+    <input name="fields[name]" type="text">
+  </div>
+  <div>
+    <legend>E-mail (optional)</legend>
+    <input name="fields[email]" type="email">
+  </div>
+  <div>
+    <legend>Message (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a> markup allowed)</legend>
+    <textarea style="width:100%" name="fields[message]" rows="12"></textarea>
+  </div>
+  
+  <div>
+    <legend><em>Comments will appear after moderation.</em></legend>
+    <button type="submit">Submit Comment</button>
+  </div>
+</form>
+
+
+
 
 <div class="footer-wrapper">
   <footer role="contentinfo">
