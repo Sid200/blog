@@ -300,5 +300,12 @@ Reading time ~4 minutes
 <script src="http://localhost:4000/assets/js/scripts.min.js"></script>
 
 
+<script>
+(function () {
+    for(let i=0;i<document.getElementsByTagName('input').length;i++){
+      document.getElementsByTagName('input').item(i).innerText = "";
+    }
+})();
+</script>
 </body>
 </html>

@@ -882,5 +882,12 @@ Also, notice that this involves a call to the functor’s constructor as well…
 <script src="http://localhost:4000/assets/js/scripts.min.js"></script>
 
 
+<script>
+(function () {
+    for(let i=0;i<document.getElementsByTagName('input').length;i++){
+      document.getElementsByTagName('input').item(i).innerText = "";
+    }
+})();
+</script>
 </body>
 </html>
