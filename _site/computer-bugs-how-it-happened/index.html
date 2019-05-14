@@ -258,33 +258,28 @@ Reading time ~4 minutes
 <div id="comments">
   Test Code: "Still in development"
   <div id="commentNew">
-<h3>Post a comment:</h3>
-<form method="POST" action="https://dev.staticman.net/v3/entry/sid200/blog/master">
+<form class="commentForm">
+  <h2>Comment Here!</h2>
 
   <input name="options[redirect]" type="hidden" value="htpps://sid200.github.io/blog/http://localhost:4000">
-
   <input name="options[slug]" type="hidden" value="computer-bugs-how-it-happened">
-  <div>
-    <legend>Name</legend>
-    <input name="fields[name]" type="text">
-  </div>
-  <div>
-    <legend>E-mail (optional)</legend>
-    <input name="fields[email]" type="email">
-  </div>
-  <div>
-    <legend>Message (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a> markup allowed)</legend>
-    <textarea style="width:100%" name="fields[message]" rows="12"></textarea>
-  </div>
-  
-  <div>
-    <legend><em>Comments will appear after moderation.</em></legend>
-    <div id="dl-submenu">
-      <div class="btn">
-        Submit Comment
-      </div>
-    </div>
-  </div>
+
+  <p type="Name:" class="commentP">
+    <input name="fields[name]" class="commentInput" required></input>
+  </p>
+
+
+  <p type="Email (optional):" class="commentP">
+    <input name="fields[email]" type="email" class="commentInput"></input>
+  </p>
+
+
+  <p type="Message:" class="commentP">
+    <textarea name="fields[message]" class="commentInput" style="overflow:hidden" required rows="10"></textarea>
+  </p>
+
+
+  <button type="submit" id="commentSend">Send</button>
 </form>
   </div>
   <div id="commentsFeed">

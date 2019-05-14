@@ -1,0 +1,54 @@
+#commentNew{
+    text-align: center;
+}
+
+.commentForm {
+  text-align: left;
+  display: inline-block;
+  width: 90%;
+  height: 600px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 0 40px -10px #000;
+  padding: 20px 30px;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+.commentInput {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
+}
+.commentInput:focus {
+  border-bottom: 2px solid #78788c;
+}
+.commentP:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+#commentSend {
+  float: right;
+  padding: 8px 12px;
+  margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #78788c;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#commentSend:hover {
+  background: #444;
+  color: #fff;
+}
