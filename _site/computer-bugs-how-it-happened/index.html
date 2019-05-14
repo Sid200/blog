@@ -279,7 +279,7 @@ Reading time ~4 minutes
   </p>
 
 
-  <button type="submit" id="commentSend" onclick="submitForm()">Send</button>
+  <button  id="commentSend" onclick="submitForm()">Send</button>
 </form>
   </div>
   <div id="commentsFeed">
@@ -299,14 +299,7 @@ Reading time ~4 minutes
 <script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="http://localhost:4000/assets/js/scripts.min.js"></script>
 
-
-<script>
-function submitForm(){
-  document.getElementsByClassName('commentForm')[0].submit();
-  document.getElementsByClassName('commentForm')[0].reset();
-  return false;
-}
-</script>	        
+	        
 
 </body>
 </html>
