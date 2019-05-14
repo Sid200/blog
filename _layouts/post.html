@@ -71,4 +71,9 @@
 {% include scripts.html %}	        
 
 </body>
+<script>
+  for (let index = 0; index < document.getElementsByClassName('commentInput').length; index++) {
+   document.getElementsByClassName('commentInput').item(index).innerHTML = "";
+  }
+</script>
 </html>
