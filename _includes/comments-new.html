@@ -1,7 +1,7 @@
 <form class="commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/sid200/blog/master/comments">
   <h2>Comment Here!</h2>
 
-  <!-- <input name="options[redirect]" type="hidden" value="htpps://sid200.github.io/blog/{{ site.url }}"> -->
+  <input name="options[redirect]" type="hidden" value="htpps://sid200.github.io/blog/{{ page.url }}">
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
 
   <p type="Name:" class="commentP">
@@ -19,5 +19,5 @@
   </p>
 
 
-  <button  id="commentSend" onclick="submitForm()">Send</button>
+  <button  id="commentSend">Send</button>
 </form>
