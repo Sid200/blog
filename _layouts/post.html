@@ -53,13 +53,23 @@
 </div><!-- /#main -->
 
 <div id="comments">
-  Test Code: "Still in development"
+ 
+ <h2 style="background-color:white">Test Code: "Still in development"</h2> 
+
   <div id="commentNew">
-{% include comments-new.html %}
+
+  {% include comments-new.html %}
+
   </div>
-  <div id="commentsFeed">
-{% include comments.html %}
+
+  <div id="commentList">
+
+      <div id="commentsFeed">
+          {% include comments.html %}
+      </div>
+
   </div>
+
 </div>
 
 <div class="footer-wrapper">
