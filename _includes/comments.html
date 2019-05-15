@@ -1,4 +1,5 @@
-<h1 style="color: #444; letter-spacing: 2px">Comments</h1>
+{% assign cmts = site.data.comments | where: "page", page.url %}
+<h1 style="color: #444; letter-spacing: 2px">Comments({{ cmts.size }})</h1>
 
 {% assign comments = site.data.comments | sort %}
 
