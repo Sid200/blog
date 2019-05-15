@@ -1,14 +1,42 @@
+<h1 style="color: #444; letter-spacing: 2px">Comments</h1>
+
 {% assign comments = site.data.comments | sort %}
 
 {% for comment in comments reversed %}
   {% assign commentData = comment[1] %}
   {% if commentData.page %}
     {% if commentData.page == page.url %}
-    <div>
-      {{ commentData.message strip_html | markdownify | smartify  }}</br>
-      From: {{ commentData.name }}</br>
-      {{ commentData.date | date_to_long_string }}
+
+
+    <div class="commentElement">
+
+      <div class="cHeader">
+        <span class="cName">
+            {{ commentData.name }}
+        </span>
+
+        <small class="cDate">
+          on {{ commentData.date | date_to_long_string }}
+        </small>
+
+        &nbsp;
+
+        <span class="cReply">
+          <small>Reply</small>
+        </span>
+
+      </div>
+
+      <hr>
+
+      <div class="cMessage">
+          {{ commentData.message strip_html | markdownify | smartify  }}
+      </div>
+     
+      
     </div>
+
+
     {% endif %}
   {% endif %}
 {% endfor %}

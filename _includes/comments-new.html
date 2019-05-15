@@ -5,18 +5,18 @@
   <input name="fields[page]" type="hidden" value="{{ page.url }}">
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
 
-  <p type="Name:" class="commentP">
-    <input name="fields[name]" class="commentInput" required></input>
+  <p class="commentP">
+    <input placeholder="Name" name="fields[name]" class="commentInput" required></input>
   </p>
 
 
-  <p type="Email (optional):" class="commentP">
-    <input name="fields[email]" type="email" class="commentInput"></input>
+  <p class="commentP">
+    <input name="fields[email]" placeholder="Email (optional)" type="email" class="commentInput"></input>
   </p>
 
 
-  <p type="Message:" class="commentP">
-    <textarea name="fields[message]" class="commentInput" style="overflow:hidden" required rows="10"></textarea>
+  <p class="commentP">
+    <textarea name="fields[message]" placeholder="Message..." class="commentInput" rows="6" required ></textarea>
   </p>
 
 
