@@ -65,8 +65,6 @@
 <script>
 
 	function setDarkMode(){
-		console.log('Enabling Dark Mode');
-		
 		if(localStorage.getItem('darkMode')){
 			
 			if(localStorage.getItem('darkMode')!=='true'){
@@ -87,7 +85,7 @@
 
 	function enableDarkMode(){
 	
-	if(document.getElementsByClassName('entry-content')){
+	if(document.getElementsByClassName('entry-content') && document.getElementsByClassName('commentForm').length){
 
 		document.getElementsByClassName('entry-content')[0].style.color = 'white';
 		document.getElementsByClassName('entry-content')[0].style.backgroundColor = '#222';
@@ -126,7 +124,7 @@
 		document.getElementsByTagName('textarea')[i].style.color = "wheat";
 	}
 
-	if(document.getElementsByClassName('commentForm')){
+	if(document.getElementsByClassName('commentForm').length){
 		document.getElementsByClassName('commentForm')[0].style.backgroundColor = "#111";
 		document.getElementById('commentBoxTitle').style.color = "wheat";
 		document.getElementById('commentList').style.color = "white";

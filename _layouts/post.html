@@ -49,6 +49,9 @@
       </footer>
     </div><!-- /.entry-content -->
     {% if site.related_posts.size > 0 %}{% include read-more.html %}{% endif %}
+{% if page.mathjax  %}
+  <script type="text/javascript" async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+{% endif %}
   </article>
 </div><!-- /#main -->
 
