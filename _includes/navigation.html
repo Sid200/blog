@@ -50,6 +50,7 @@
 				<li><a href="{{ site.url }}/tags/">All Tags</a></li>
 			</ul>
 		</li>
+		<li><a onclick="setDarkMode()" style="cursor: pointer">Dark Mode</a></li>
 		{% for link in site.data.navigation %}
 	    {% if link.url contains 'http' %}
 	        {% assign domain = '' %}
@@ -60,3 +61,83 @@
 	  {% endfor %}
 	</ul><!-- /.dl-menu -->
 </nav><!-- /.dl-menuwrapper -->
+
+<script>
+
+	function setDarkMode(){
+		console.log('Enabling Dark Mode');
+		
+		if(localStorage.getItem('darkMode')){
+			
+			if(localStorage.getItem('darkMode')!=='true'){
+
+				localStorage.setItem('darkMode', 'true');
+
+				enableDarkMode();
+
+			}else{
+				localStorage.setItem('darkMode', 'false');
+				window.location.reload();
+			}
+		}else{
+			localStorage.setItem('darkMode', 'true');
+			enableDarkMode();
+		}
+	}
+
+	function enableDarkMode(){
+	
+	if(document.getElementsByClassName('entry-content')){
+
+		document.getElementsByClassName('entry-content')[0].style.color = 'white';
+		document.getElementsByClassName('entry-content')[0].style.backgroundColor = '#222';
+
+	}
+
+	for(let i = 0;i<document.getElementsByTagName('blockquote').length;i++){
+		document.getElementsByTagName('blockquote')[i].style.backgroundColor = '#222';
+	}
+
+	document.body.style.backgroundColor = "#222";
+	for(let i = 0;i<document.getElementsByClassName('hentry').length;i++){
+		if(!document.getElementsByClassName('hentry')[i].classList.contains('postBG'))
+			document.getElementsByClassName('hentry')[i].style.backgroundColor = '#444';
+	}
+
+	for(let i = 0;i<document.getElementsByTagName('a').length;i++){
+		if(!document.getElementsByTagName('a')[i].hasAttribute("rel"))	continue;
+		document.getElementsByTagName('a')[i].style.color = 'white';
+	}
+
+	for(let i = 0;i<document.getElementsByClassName('entry-content').length;i++){
+		document.getElementsByClassName('entry-content')[i].style.color = 'white';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('read-more').length;i++){
+		document.getElementsByClassName('read-more')[i].style.backgroundColor = '#ddd';
+	}
+
+
+	for(let i=0;i<document.getElementsByTagName('input').length;i++){
+		document.getElementsByTagName('input')[i].style.color = "wheat";
+	}
+
+	for(let i=0;i<document.getElementsByTagName('textarea').length;i++){
+		document.getElementsByTagName('textarea')[i].style.color = "wheat";
+	}
+
+	if(document.getElementsByClassName('commentForm')){
+		document.getElementsByClassName('commentForm')[0].style.backgroundColor = "#111";
+		document.getElementById('commentBoxTitle').style.color = "wheat";
+		document.getElementById('commentList').style.color = "white";
+		document.getElementById('commentsFeed').style.backgroundColor = "#111";
+	}
+}
+	
+	window.onload = function(){
+		if(localStorage.getItem('darkMode'))
+			if(localStorage.getItem('darkMode')==='true')
+				enableDarkMode();
+	}
+
+</script>
