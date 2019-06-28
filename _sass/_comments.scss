@@ -36,7 +36,7 @@
   color: #5a5a5a;
 }
 
-#commentSend {
+.commentButtons {
   float: right;
   padding: 8px 12px;
   margin: 8px 0 0;
@@ -47,11 +47,15 @@
   cursor: pointer;
   transition: all 0.3s;
 }
-#commentSend:hover {
+.commentButtons:hover {
   background: #444;
   color: #fff;
 }
 
+#commentReplyCancel{
+  display: none;
+  margin-left: 1em;
+}
 
 //Feed
 

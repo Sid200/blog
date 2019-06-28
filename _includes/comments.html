@@ -22,9 +22,9 @@
 
         &nbsp;
 
-        <span class="cReply">
+        <a class="cReply" href="#commentBoxTitle" onclick="document.getElementById('commentBoxTitle').innerText = `Reply To {{ commentData.name }}`;document.getElementById('comment-parent').value = '{{ commentData._id }}';document.getElementById('commentReplyCancel').style.display = 'block'">
           <small>Reply</small>
-        </span>
+        </a>
 
       </div>
 
