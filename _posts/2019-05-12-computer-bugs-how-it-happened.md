@@ -1,6 +1,8 @@
 ---
 layout: post
-title: Computer Bugs, an example to prove nomenclature for anything is not bad
+title: Computer Bugs, Terminology and Humans
+description: Explore the 'human' approach into naming things with a simple (computer history based) example.
+modified:
 tags:
 - computers
 - bugs
