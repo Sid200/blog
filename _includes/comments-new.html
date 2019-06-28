@@ -20,6 +20,14 @@
     <textarea name="fields[message]" placeholder="Message..." class="commentInput" rows="6" required ></textarea>
   </p>
 
-  <span class="commentButtons" id="commentReplyCancel" onclick="this.style.display='none';document.getElementById('commentBoxTitle').innerText='Comment Here!';document.getElementById('comment-parent').value=''">Cancel</span>
+  <span class="commentButtons" id="commentReplyCancel" onclick=cancelReply()>Cancel</span>
   <button type="submit" class="commentButtons">Send</button>
 </form>
+
+<script>
+function cancelReply(){
+  document.getElementById('commentReplyCancel').style.display='none';
+  document.getElementById('commentBoxTitle').innerText='Comment Here!';
+  document.getElementById('comment-parent').value='';
+}
+</script>
