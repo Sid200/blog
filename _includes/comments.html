@@ -1,13 +1,10 @@
-{% assign cmts = site.data.comments | where: "page", page.url %}
-<h1 style="color: #444; letter-spacing: 2px">Comments({{ cmts.size }})</h1>
+{% assign commentSize = site.data.comments | where: "page", page.url %}
+<h1 style="color: #444; letter-spacing: 2px">Comments({{ commentSize.size }})</h1>
 
-{% assign comments = site.data.comments | sort %}
-
-{% for comment in comments reversed %}
-  {% assign commentData = comment[1] %}
-  {% if commentData.page %}
-    {% if commentData.page == page.url %}
-
+{% assign cmts = site.data.comments | where: "page", page.url | where: "reply_to", "" | sort:"date" | reverse %}
+{% for comment in cmts %}
+  {% assign commentData = comment %}
+  {% assign replies = site.data.comments | where: "page", page.url | where: "reply_to", commentData._id%}
 
     <div class="commentElement">
 
@@ -34,10 +31,29 @@
           {{ commentData.message strip_html | markdownify | smartify  }}
       </div>
      
-      
-    </div>
+</div>
+
+{% if replies %}
+        {% for reply in replies%}
+        <div class="replyElement">
+              <div class="cHeader">
+                <span class="cName">
+                    {{ reply.name }}
+                </span>
+        
+                <small class="cDate">
+                  on {{ reply.date | date_to_long_string }}
+                </small>
+                
+              </div>
+        
+              <hr>
+        
+              <div class="cMessage">
+                  {{ reply.message strip_html | markdownify | smartify  }}
+              </div>
+        {% endfor %}
+      {% endif %}
 
 
-    {% endif %}
-  {% endif %}
 {% endfor %}
