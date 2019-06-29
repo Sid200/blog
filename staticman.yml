@@ -11,7 +11,7 @@ comments:
 
   # When allowedOrigins is defined, only requests sent from one of the domains
   # listed will be accepted.
-  allowedOrigins: ["sid200.github.io/blog"] # TODO: Add your domains
+  allowedOrigins: ["sid200.github.io/blog"] 
 
   # (*) REQUIRED
   #
