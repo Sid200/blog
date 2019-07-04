@@ -85,11 +85,9 @@
 
 	function enableDarkMode(){
 	
-	if(document.getElementsByClassName('entry-content') && document.getElementsByClassName('commentForm').length){
-
+	if(document.getElementsByClassName('entry-content') && document.body.getAttribute('id')!=='post-index'){
 		document.getElementsByClassName('entry-content')[0].style.color = 'white';
 		document.getElementsByClassName('entry-content')[0].style.backgroundColor = '#222';
-
 	}
 
 	for(let i = 0;i<document.getElementsByTagName('blockquote').length;i++){
@@ -97,6 +95,7 @@
 	}
 
 	document.body.style.backgroundColor = "#222";
+
 	for(let i = 0;i<document.getElementsByClassName('hentry').length;i++){
 		if(!document.getElementsByClassName('hentry')[i].classList.contains('postBG'))
 			document.getElementsByClassName('hentry')[i].style.backgroundColor = '#444';
