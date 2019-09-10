@@ -181,7 +181,7 @@ auto lambda = [](const Point2D& a, const Point2D& b) {
 		return (a.m_x*a.m_x + a.m_y*a.m_y) < (b.m_x*b.m_x + b.m_y*b.m_y);
 	};
 
-std::sort(vec.begin(), vec.end(),lambda);
+std::sort(vec.begin(), vec.end(),lambda());
 ```
 
 <br>
