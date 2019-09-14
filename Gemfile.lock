@@ -278,6 +278,7 @@ DEPENDENCIES
   jekyll-gist
   jekyll-paginate
   jekyll-sitemap
+  jemoji
   tzinfo-data
 
 BUNDLED WITH
