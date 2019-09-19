@@ -4,7 +4,7 @@ layout: post
 date: 2019-09-11 14:51 -0400
 description: This is THE FONT I would choose to code in. Why not you try it as well?
 image:
-  path: images/FontLove/
+  path: images/FontLove/header.jpg
   background: FontLove/bg.jpg
   feature: FontLove/header.jpg
 tags:
@@ -42,7 +42,16 @@ The thing with FiraCode is it is Consolas + Ligatures. Or in other words, elegan
 However, my fate has decided that I not code for sometime. My laptop is still not working and it is my prime source for coding during nighttime which is my primetime... And so yeah stuff...
 
 > I will soon update this thing with some pictures of Firacode in action.. (Couldn't do it because of the fact that I am somehow, in Safe Mode, trying to complete a blog post that I started to write from probably a week ago..)
->  And about posting to GitHub, I will do that by logging-in in normal mode which has the possibility of crashing anytime and somehow upload it. Don't worry... If you are reading this, I was obviously successful!
+> And about posting to GitHub, I will do that by logging-in in normal mode which has the possibility of crashing anytime and somehow upload it. Don't worry... If you are reading this, I was obviously successful!
+
+> Update: Laptop has been back from repair, just finished getting all basic necessitites (required by me) set up. (ALMOST). More on my horrendous experience and stuff later in the next post. For now, enjoy this FiraCode Snippet:
+
+<center>
+<img src="../images/FontLove/firacode_demo.png" alt="FiraCodeeee"><br>
+<caption>:fire:aCode</caption>
+</center>
+
+You can check <a href="http://www.0x08.org/fonts/FiraCode/specimen.html" target="_blank">this</a> site out for a small static demo.
 
 ## Yeah this one is small
 
