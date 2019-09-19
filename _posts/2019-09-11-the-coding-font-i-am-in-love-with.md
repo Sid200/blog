@@ -4,7 +4,7 @@ layout: post
 date: 2019-09-11 14:51 -0400
 description: This is THE FONT I would choose to code in. Why not you try it as well?
 image:
-  path: images/FontLove/header.jpg
+  path: /images/FontLove/header.jpg
   background: FontLove/bg.jpg
   feature: FontLove/header.jpg
 tags:
