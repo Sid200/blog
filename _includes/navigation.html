@@ -10,7 +10,7 @@
 					<h4>{{ site.owner.name }}</h4>
 					<p>{{ site.owner.bio }}</p>
 				</li>
-				<li><a href="{{ site.url }}/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+				<li><a href="{{ site.url }}/about/"><span class="btn btn-inverse learn-more-btn">Learn More</span></a></li>
 				{% if site.owner.email %}<li>
 					<a href="mailto:{{ site.owner.email }}"><i class="fa fa-fw fa-envelope"></i> Email</a>
 				</li>{% endif %}
@@ -102,8 +102,33 @@
 	}
 
 	for(let i = 0;i<document.getElementsByTagName('a').length;i++){
-		if(!document.getElementsByTagName('a')[i].hasAttribute("rel"))	continue;
-		document.getElementsByTagName('a')[i].style.color = 'white';
+		if(document.getElementsByTagName('a')[i].classList.contains('darkMode-noGray'))
+			document.getElementsByTagName('a')[i].style.color = 'white';
+		else
+		document.getElementsByTagName('a')[i].style.color = 'gray';
+	}
+
+	for(let i = 0;i<document.getElementsByClassName('mainPage-darkMode').length;i++){
+			document.getElementsByClassName('mainPage-darkMode')[i].style.backgroundColor = '#101010';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('btn').length;i++){
+		if(!document.getElementsByClassName('btn')[i].classList.contains('learn-more-btn')){
+			document.getElementsByClassName('btn')[i].addEventListener("mouseover" , ()=>{
+				document.getElementsByClassName('btn')[i].style.backgroundColor = '#000';
+			});
+			document.getElementsByClassName('btn')[i].addEventListener("mouseout" , ()=>{
+				document.getElementsByClassName('btn')[i].style.backgroundColor = '#222';
+			});
+		}
+	}
+
+	for(let i=0;i<document.getElementsByClassName('meta-archive-list').length;i++){
+			document.getElementsByClassName('meta-archive-list')[i].style.color = '';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('current-page').length;i++){
+		document.getElementsByClassName('current-page')[i].style.color = 'grey';
 	}
 
 	for(let i = 0;i<document.getElementsByClassName('entry-content').length;i++){
@@ -115,7 +140,11 @@
 	}
 
 	for(let i=0;i<document.getElementsByClassName('read-more').length;i++){
-		document.getElementsByClassName('read-more')[i].style.backgroundColor = '#ddd';
+		document.getElementsByClassName('read-more')[i].style.backgroundColor = '#080401';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('read-more-description').length;i++){
+		document.getElementsByClassName('read-more-description')[i].style.color = '#aaa';
 	}
 
 
@@ -125,6 +154,10 @@
 
 	for(let i=0;i<document.getElementsByTagName('textarea').length;i++){
 		document.getElementsByTagName('textarea')[i].style.color = "wheat";
+	}
+
+	for(let i = 0;i<document.getElementsByClassName('continue-reading-readMore').length;i++){
+		document.getElementsByClassName('continue-reading-readMore')[i].style.color = '#444';
 	}
 
 	if(document.getElementsByClassName('commentForm').length){
