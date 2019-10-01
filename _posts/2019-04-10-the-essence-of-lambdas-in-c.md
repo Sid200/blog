@@ -423,9 +423,12 @@ public:
 
 For those who understood, nice. For those who didn't, your question might be something like:
 
-<i><b>
-"I am changing <code>m_a</code> even though the function is <code>const</code>. How is that possible?"
-</b></i>
+
+<i><b>"I am changing</b></i> 
+<code>m_a</code> 
+<i><b>even though the function is</b></i> <code>const</code>. 
+<i><b>How is that possible?"</b></i>
+
 
 <br>
 Think about it like this, you aren't changing the reference. You are changing the value of what the reference is referring to. 
@@ -591,7 +594,7 @@ Let's see what we get, part by part.
 These are the definitions of the constructor and the operator overload of the functor class respectively:<br>
 (Don't worry about the code inside, we won't be talking about registers at all):
 
-```
+```c
 functor::functor(int&):
         push    rbp
         mov     rbp, rsp
@@ -619,7 +622,7 @@ functor::operator()() const:
 
 Coming to the lambda, this is what we get:
 
-```
+```c
 main::{lambda()#1}::operator()() const:
         push    rbp
         mov     rbp, rsp
@@ -638,7 +641,7 @@ The definition of the lambda call is the same as that of the overload of the fun
 
 Now, you might ask where is the constructor for it? Let's go to <code>main</code>:
 
-```
+```c
 	main:
  1       push    rbp
  2       mov     rbp, rsp
