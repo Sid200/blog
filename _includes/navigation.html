@@ -1,3 +1,5 @@
+<div class="se-pre-con"></div>
+
 <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
 	<button class="dl-trigger">Open Menu</button>
 	<ul class="dl-menu">
@@ -63,6 +65,16 @@
 </nav><!-- /.dl-menuwrapper -->
 
 <script>
+
+function fade(element) {
+    setTimeout(()=>{
+		$(`.${element.classList[0]}`).fadeOut();
+	}, 1000);
+}
+
+window.addEventListener('load', function() {
+		fade(document.getElementsByClassName('se-pre-con')[0]);
+	});
 
 	function setDarkMode(){
 		if(localStorage.getItem('darkMode')){
