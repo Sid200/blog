@@ -75,7 +75,7 @@
 
 			}else{
 				localStorage.setItem('darkMode', 'false');
-				window.location.reload();
+				disableDarkMode();
 			}
 		}else{
 			localStorage.setItem('darkMode', 'true');
@@ -83,7 +83,92 @@
 		}
 	}
 
-	function enableDarkMode(){
+	function disableDarkMode(){
+	
+	if(document.getElementsByClassName('entry-content') && document.body.getAttribute('id')!=='post-index'){
+		document.getElementsByClassName('entry-content')[0].style.color = '';
+		document.getElementsByClassName('entry-content')[0].style.backgroundColor = '';
+	}
+
+	for(let i = 0;i<document.getElementsByTagName('blockquote').length;i++){
+		document.getElementsByTagName('blockquote')[i].style.backgroundColor = '';
+	}
+
+	document.body.style.backgroundColor = "";
+
+	for(let i = 0;i<document.getElementsByClassName('hentry').length;i++){
+		if(!document.getElementsByClassName('hentry')[i].classList.contains('postBG'))
+			document.getElementsByClassName('hentry')[i].style.backgroundColor = '';
+	}
+
+	for(let i = 0;i<document.getElementsByTagName('a').length;i++){
+		if(document.getElementsByTagName('a')[i].classList.contains('darkMode-noGray'))
+			document.getElementsByTagName('a')[i].style.color = '';
+		else
+		document.getElementsByTagName('a')[i].style.color = '';
+	}
+
+	for(let i = 0;i<document.getElementsByClassName('mainPage-darkMode').length;i++){
+			document.getElementsByClassName('mainPage-darkMode')[i].style.backgroundColor = '';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('btn').length;i++){
+		if(!document.getElementsByClassName('btn')[i].classList.contains('learn-more-btn')){
+			document.getElementsByClassName('btn')[i].addEventListener("mouseover" , ()=>{
+				document.getElementsByClassName('btn')[i].style.backgroundColor = '';
+			});
+			document.getElementsByClassName('btn')[i].addEventListener("mouseout" , ()=>{
+				document.getElementsByClassName('btn')[i].style.backgroundColor = '';
+			});
+		}
+	}
+
+	for(let i=0;i<document.getElementsByClassName('meta-archive-list').length;i++){
+			document.getElementsByClassName('meta-archive-list')[i].style.color = '';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('current-page').length;i++){
+		document.getElementsByClassName('current-page')[i].style.color = '';
+	}
+
+	for(let i = 0;i<document.getElementsByClassName('entry-content').length;i++){
+		document.getElementsByClassName('entry-content')[i].style.color = '';
+	}
+
+	for(let i = 0;i<document.getElementsByTagName('code').length;i++){
+		document.getElementsByTagName('code')[i].style.color = '';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('read-more').length;i++){
+		document.getElementsByClassName('read-more')[i].style.backgroundColor = '';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('read-more-description').length;i++){
+		document.getElementsByClassName('read-more-description')[i].style.color = '';
+	}
+
+
+	for(let i=0;i<document.getElementsByTagName('input').length;i++){
+		document.getElementsByTagName('input')[i].style.color = "";
+	}
+
+	for(let i=0;i<document.getElementsByTagName('textarea').length;i++){
+		document.getElementsByTagName('textarea')[i].style.color = "";
+	}
+
+	for(let i = 0;i<document.getElementsByClassName('continue-reading-readMore').length;i++){
+		document.getElementsByClassName('continue-reading-readMore')[i].style.color = '';
+	}
+
+	if(document.getElementsByClassName('commentForm').length){
+		document.getElementsByClassName('commentForm')[0].style.backgroundColor = "";
+		document.getElementById('commentBoxTitle').style.color = "";
+		document.getElementById('commentList').style.color = "";
+		document.getElementById('commentsFeed').style.backgroundColor = "";
+	}
+}
+	
+function enableDarkMode(){
 	
 	if(document.getElementsByClassName('entry-content') && document.body.getAttribute('id')!=='post-index'){
 		document.getElementsByClassName('entry-content')[0].style.color = 'white';
@@ -167,7 +252,7 @@
 		document.getElementById('commentsFeed').style.backgroundColor = "#111";
 	}
 }
-	
+
 	window.onload = function(){
 		if(localStorage.getItem('darkMode'))
 			if(localStorage.getItem('darkMode')==='true')
