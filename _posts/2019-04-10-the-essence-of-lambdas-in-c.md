@@ -275,7 +275,7 @@ int main(){
 
 int a = 2;
 
-[a](){std::cout<<a;};
+[a](){std::cout<<a;}();
 
 std::cin.get();
 return 0;
