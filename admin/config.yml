@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update; default master
+# publish_mode: editorial_workflow # Puts data in pull requests... 
+media_folder: "images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts" # UI Text
+    folder: "_posts"  
+    create: true  # Allow to create new posts
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # File name structure
+    fields: #Fields for each document
+      - {label: "Type", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Use MathJax?", name: "mathjax", widget: "boolean"}
+      - {label: "Date Modified", name: "modified", widget: "datetime"}
+      - {label: "Add Tags", name: "tags", widget: "list"}
+
