@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: "Sid200/blog"
+  repo: Sid200/blog
   branch: master # Branch to update; default master
 # publish_mode: editorial_workflow # Puts data in pull requests... 
 media_folder: "images"
@@ -19,4 +19,3 @@ collections:
       - {label: "Use MathJax?", name: "mathjax", widget: "boolean"}
       - {label: "Date Modified", name: "modified", widget: "datetime"}
       - {label: "Add Tags", name: "tags", widget: "list"}
-
