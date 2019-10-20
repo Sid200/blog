@@ -3,7 +3,7 @@ backend:
   repo: Sid200/blog
   branch: master # Branch to update; default master
 site_url: https://sid200.github.io/blog
-site_id: zealify.netlify.com
+base_url: zealify.netlify.com
 #publish_mode: editorial_workflow #Puts data in pull requests... 
 media_folder: "images"
 
