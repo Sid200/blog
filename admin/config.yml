@@ -2,6 +2,7 @@ backend:
   name: github
   repo: Sid200/blog
   branch: master # Branch to update; default master
+site_url: https://sid200.github.io/blog 
 #publish_mode: editorial_workflow #Puts data in pull requests... 
 media_folder: "images"
 
