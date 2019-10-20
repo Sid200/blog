@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: "Sid200/blog"
   branch: master # Branch to update; default master
 # publish_mode: editorial_workflow # Puts data in pull requests... 
 media_folder: "images"
