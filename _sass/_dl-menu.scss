@@ -21,6 +21,13 @@
 		left: 25px;
 	}
 
+	@media #{$small} {
+		position: fixed;
+		max-width: 175px;
+		top: 5px;
+		left: 10px;
+	}
+
 	&.dl-menuopen {
 		width: 100%;
 		height: 100%;
