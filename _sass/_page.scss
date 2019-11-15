@@ -12,6 +12,14 @@ body {
 /* 
    Main content
    ========================================================================== */
+//Entry Cards...
+
+.mainPage-darkMode{
+	@media #{$small} {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
 
 .entry,
 .hentry {
@@ -277,17 +285,25 @@ header .entry-meta {
 		box-shadow: 0 0 0 0, 0 6px 12px rgba(#000,0.1);
 		border-radius: 3px;
 
+		@media #{$small} {
+			margin-left: 0px;
+			width: 100%;
+			padding: 25px 30px;
+			font-size: 1.03rem;
+		}
+
 		@media #{$medium} {
 			margin-left: 10px;
 			margin-right: 10px;
 			padding: 20px 30px;
+			font-size: 1.05rem;
 		}
 
 		@media #{$large} {
 			max-width: 80%;
 			margin: 50px auto 30px auto;
 			padding: 50px 80px;
-
+			font-size: 1rem;
 			> p:first-child {
 				@include font-size(20);
 			}

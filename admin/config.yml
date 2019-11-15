@@ -12,6 +12,8 @@ collections:
     folder: "_posts"  
     create: true  # Allow to create new posts
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # File name structure
+    editor: 
+      preview: false
     fields: #Fields for each document
       - {label: "Type", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
@@ -20,3 +22,4 @@ collections:
       - {label: "Use MathJax?", name: "mathjax", widget: "boolean"}
       - {label: "Date Modified", name: "modified", widget: "datetime"}
       - {label: "Add Tags", name: "tags", widget: "list"}
+      - {label: "Content", name: "body", widget: "markdown"}
