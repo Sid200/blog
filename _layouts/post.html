@@ -35,6 +35,11 @@
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
           {% include read-time.html %}
+          <br>
+          <br>
+          {% if page.series %}
+            <font size="6em">Part: {{page.part}}</font>
+          {% endif %}
         </p><!-- /.entry-reading-time -->
         {% endif %}
       </div><!-- /.header-title-wrap -->
