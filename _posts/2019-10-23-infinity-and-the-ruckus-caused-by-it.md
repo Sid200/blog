@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Infinity and the ruckus caused by it
+title: Infinity and the "ruckus" caused by it
 description: Ever wondered what infinity is? Is it a number? Does it even have existence? Let's wonder together!
 
 date: 2019-10-23 09:05 -0400
-
+modified: 2019-11-25 12:17
 mathjax: true
 series: true
 part: 1
@@ -20,6 +20,13 @@ tags:
 - large
 - sets
 - set
+- function
+- functions
+- bijection
+- injective
+- surjective
+- one-one
+- onto
 ---
 
 *Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.* - **Albert Einstein**
@@ -32,7 +39,9 @@ I thought and thought. At the end what came into my mind was talking about infin
 
 > Infinity is not a number. For all the programmers out there, it is NaN (yeah, not a number)
 
-People have several misconceptions about it. Something that is really large, something that is "something that can't be defined" or basically undefined and yeah it is really not defined.
+People might have several misconceptions about it.
+
+ > Something that is really large, something that is "something that can't be defined" or basically undefined and yeah it is really not defined.
 
 Instead of directly going into mathematical proofs or total into-the-notation talks, let us frame this thing bit by bit.
 I don't really know where to start. Infinity or $$\infty$$ (got mathjax :grin:) is used in a lot of places - starting from calculus (I have talks scheduled on that) to well, almost everything (yeah).
@@ -60,7 +69,11 @@ Let's start with a question:
 
 If you are a **Math Guy (or a girl)**, you would probably know the answer (or even might have discovered the flaw in the question). Why not shut up? (heh I am joking don't worry I believe there will be something for you in the Physics Section?)
 
-In non-technical terms, the answer would be both have the same number of elements. Seems **absurd** right? That's the power of $$\infty$$. It makes your head wobble.
+In non-technical terms, the answer would be this:
+
+***BOTH have the SAME number of elements.***
+
+ Seems **absurd** right? That's the power of $$\infty$$. It makes your head wobble.
 
 I obviously am not gonna leave anyone without the proof for the same, the awesome proper mathematical notations we might use and some terminology (which if you remember from the Computer Bugs talk, we humans love a lot)
 
@@ -121,7 +134,9 @@ Say we had set $$A$$ consisting of the names of some people and set $$B$$ consis
 
 $$f : A \to B $$
 <br>
-$$f(x) = m \mid m \in B \text{ and } x \text{ hates } m \text{ the most. Provided, } x \in A$$
+$$f(x) = m \mid m \in B \text{ and } x \text{ hates } m \text{ the most. } $$
+
+$$\text {Provided, } x \in A$$
 
 ***OK. Now back to our nail example thingy***
 
@@ -134,7 +149,7 @@ $$\mathbb{N}$$: 1, 2, 3, 4, 5, ..., $$\infty$$
 <br>
 $$\mathbb{Z}$$: $$-\infty$$ ..., -3, -2, -1, 0, 1, 2, 3 ..., $$+\infty$$
 
-How do we come up with a bijection? (We would also need to prove that it is a bijection btw, I will do it don't worry!)
+How do we come up with a bijection? (We would also need to prove that it is a bijection by the way... And we will do it don't worry...)
 
 A bijection, requires things to correspond to each other. In other words, there has to be some kind of a part of a whole, within which the elements have same properties. Like for our nail example, all fingers are well, fingers. In this case, the part *is* the whole. What about $$\mathbb{N}$$ and $$\mathbb{Z}$$ ?
 

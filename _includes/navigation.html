@@ -116,8 +116,13 @@ window.addEventListener('load', function() {
 	for(let i = 0;i<document.getElementsByTagName('a').length;i++){
 		if(document.getElementsByTagName('a')[i].classList.contains('darkMode-noGray'))
 			document.getElementsByTagName('a')[i].style.color = '';
+			//Idk what I did here... This place is becoming a mess
 		else
 		document.getElementsByTagName('a')[i].style.color = '';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('partTag').length;i++){
+		document.getElementsByClassName('partTag')[i].style.color = '';
 	}
 
 	for(let i = 0;i<document.getElementsByClassName('mainPage-darkMode').length;i++){
@@ -207,6 +212,10 @@ function enableDarkMode(){
 
 	for(let i = 0;i<document.getElementsByClassName('mainPage-darkMode').length;i++){
 			document.getElementsByClassName('mainPage-darkMode')[i].style.backgroundColor = '#101010';
+	}
+
+	for(let i=0;i<document.getElementsByClassName('partTag').length;i++){
+		document.getElementsByClassName('partTag')[i].style.color = 'white';
 	}
 
 	for(let i=0;i<document.getElementsByClassName('btn').length;i++){
