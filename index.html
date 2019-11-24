@@ -31,11 +31,12 @@ image:
       <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink darkMode-noGray" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
     {% else %}
       <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url" class="darkMode-noGray">
-        {{ post.title }} <br> 
-        {% if post.series %}
-        <font size="4em" style="  border-style: solid; border-width:thin; border-radius: 0.3em; padding: 0.25em;">Part: {{ post.part }}</font> 
-      {% endif %} 
-      </a></h1>
+        {{ post.title }} <br>  
+      </a>
+      {% if post.series %}
+         <font size="4em" class="partTag" style="  border-style: solid; border-width:thin; border-radius: 0.3em; padding: 0.25em;">Part: {{ post.part }}</font> 
+      {% endif %}
+    </h1>
     {% endif %}
   </header>
   <div class="entry-content">
