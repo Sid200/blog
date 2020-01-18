@@ -261,7 +261,7 @@ $$E_p$$ is really a limit which defines the total $$e_p$$ that can be used to _w
 
 We, humans, have decided to name this $$e_p$$ __Work__ (A physical quantity). What __Work__ says is the amount of stuff done (that stuff can be anything). While _working_ we change interactions (what we call and refer as __Force__) (interactions with a field or whatever). We change the way how something interacts, its form. $$E_p$$ and hence Energy associated with a thingy tells us how much of _work_ can be done by that thingy. That's it.
 
-Notice how $$e_p$$ (work) is just a part of $E_p(Energy). In the real world, and some mathematics, you would find work and Energy associated with a body to have the same units. That's because they are essentially the same. Work is just a part of the Energy that is used up.
+Notice how $$e_p$$ (work) is just a part of $$E_p$$(Energy). In the real world, and some mathematics, you would find work and Energy associated with a body to have the same units. That's because they are essentially the same. Work is just a part of the Energy that is used up.
 
 Do remember that Energy and Work are properties. They are nothing if you don't know who or what they are associated with. That's why I put emphasis on making sure that I include the phrase __associated to__ a lot.
 
