@@ -52,7 +52,11 @@
 				<li><a href="{{ site.url }}/tags/">All Tags</a></li>
 			</ul>
 		</li>
-		<li><a onclick="setDarkMode()" style="cursor: pointer">Dark Mode</a></li>
+		
+		<li>
+			<a id="darkModeText" onclick="setDarkMode()" style="cursor: pointer"></a>
+		</li>
+
 		{% for link in site.data.navigation %}
 	    {% if link.url contains 'http' %}
 	        {% assign domain = '' %}
@@ -84,13 +88,16 @@ window.addEventListener('load', function() {
 				localStorage.setItem('darkMode', 'true');
 
 				enableDarkMode();
+				document.getElementById('darkModeText').textContent = 'Turn On the Lights!';
 
 			}else{
 				localStorage.setItem('darkMode', 'false');
 				disableDarkMode();
+				document.getElementById('darkModeText').textContent = 'Turn Off the Lights!';
 			}
 		}else{
 			localStorage.setItem('darkMode', 'true');
+			document.getElementById('darkModeText').textContent = 'Turn On the Lights!';
 			enableDarkMode();
 		}
 	}
@@ -182,10 +189,24 @@ window.addEventListener('load', function() {
 		document.getElementById('commentBoxTitle').style.color = "";
 		document.getElementById('commentList').style.color = "";
 		document.getElementById('commentsFeed').style.backgroundColor = "";
+		document.getElementById('commentFeedTitle').style.color = "";
+		document.getElementById('footerWebInfo').style.color = "";
+
+		for(let i=0;i<document.getElementsByClassName('commentElement').length;i++){
+			document.getElementsByClassName('commentElement')[i].style.borderColor = '';
+		}
+
+		for(let i=0;i<document.getElementsByClassName('replyElement').length;i++){
+			document.getElementsByClassName('replyElement')[i].style.borderColor = '';
+		}
+
+		for(let i=0;i<document.getElementsByClassName('commentIdLine').length;i++){
+			document.getElementsByClassName('commentIdLine')[i].style.borderColor = '';
+		}
 	}
 }
 	
-function enableDarkMode(){
+	function enableDarkMode(){
 	
 	if(document.getElementsByClassName('entry-content') && document.body.getAttribute('id')!=='post-index'){
 		document.getElementsByClassName('entry-content')[0].style.color = 'white';
@@ -267,17 +288,38 @@ function enableDarkMode(){
 	}
 
 	if(document.getElementsByClassName('commentForm').length){
-		document.getElementsByClassName('commentForm')[0].style.backgroundColor = "#111";
+		document.getElementsByClassName('commentForm')[0].style.backgroundColor = "#101112";
 		document.getElementById('commentBoxTitle').style.color = "wheat";
 		document.getElementById('commentList').style.color = "white";
-		document.getElementById('commentsFeed').style.backgroundColor = "#111";
+		document.getElementById('commentsFeed').style.backgroundColor = "#101112";
+		document.getElementById('commentFeedTitle').style.color = "white";
+		document.getElementById('footerWebInfo').style.color = "white";
+		
+		for(let i=0;i<document.getElementsByClassName('commentElement').length;i++){
+			document.getElementsByClassName('commentElement')[i].style.borderColor = '#343435';
+		}
+
+		for(let i=0;i<document.getElementsByClassName('replyElement').length;i++){
+			document.getElementsByClassName('replyElement')[i].style.borderColor = '#343435';
+		}
+
+		for(let i=0;i<document.getElementsByClassName('commentIdLine').length;i++){
+			document.getElementsByClassName('commentIdLine')[i].style.borderColor = '#343435';
+		}
 	}
 }
 
 	window.onload = function(){
-		if(localStorage.getItem('darkMode'))
-			if(localStorage.getItem('darkMode')==='true')
+		if(localStorage.getItem('darkMode')){
+			if(localStorage.getItem('darkMode')==='true'){
 				enableDarkMode();
+				document.getElementById('darkModeText').textContent = 'Turn On the Lights!';
+			}else{
+				document.getElementById('darkModeText').textContent = 'Turn Off the Lights!';
+			}
+		}else{
+			document.getElementById('darkModeText').textContent = 'Turn Off the Lights!';
+		}
 	}
 
 </script>
