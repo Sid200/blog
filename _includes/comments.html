@@ -1,5 +1,5 @@
 {% assign commentSize = site.data.comments | where: "page", page.url %}
-<h1 style="color: #444; letter-spacing: 2px">Comments({{ commentSize.size }})</h1>
+<h1 id="commentFeedTitle" style="color: #444; letter-spacing: 2px">Comments({{ commentSize.size }})</h1>
 
 {% assign cmts = site.data.comments | where: "page", page.url | where: "reply_to", "" | sort:"date" | reverse %}
 {% for comment in cmts %}
@@ -19,13 +19,13 @@
 
         &nbsp;
 
-        <a class="cReply" href="#commentBoxTitle" onclick="document.getElementById('commentBoxTitle').innerText = `Reply To {{ commentData.name }}`;document.getElementById('comment-parent').value = '{{ commentData._id }}';document.getElementById('commentReplyCancel').style.display = 'block'">
+        <a class="cReply" href="#commentNew" onclick="document.getElementById('commentBoxTitle').innerText = `Reply To {{ commentData.name }}`;document.getElementById('comment-parent').value = '{{ commentData._id }}';document.getElementById('commentReplyCancel').style.display = 'block'">
           <small>Reply</small>
         </a>
 
       </div>
 
-      <hr>
+      <hr class="commentIdLine">
 
       <div class="cMessage">
           {{ commentData.message strip_html | markdownify | smartify  }}
@@ -47,7 +47,7 @@
                 
               </div>
         
-              <hr>
+              <hr class="commentIdLine">
         
               <div class="cMessage">
                   {{ reply.message strip_html | markdownify | smartify  }}
