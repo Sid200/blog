@@ -10,12 +10,12 @@ comments: false
     {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
     {% if forloop.first %}
-    <article>
+    <article class="archiveItem">
       <h2 id="{{ this_year }}-ref">{{ this_year }}</h2>
       <ul>
     {% endif %}
 
-        <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="meta-archive-list">{{ post.title }} 
+        <li class="entry-title archiveTitle"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="meta-archive-list">{{ post.title }} 
           {% if post.series %}
             | Part: {{post.part}}
           {% endif %}

@@ -78,3 +78,24 @@
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a {
 	transition: all 0.2s ease;
 }
+
+/*
+   Post Archive	
+   ========================================================================= */
+.archiveItem{
+	color: #A7A59F;
+	background-color: #181A1B !important;
+}
+
+.archiveTitle{
+	color: #A7A59F;
+	a{
+		color: #cccccc;
+		&:visited{
+			color: #a1a1a1;
+		}
+		&:hover{
+			color: #fff;
+		}
+	}
+}
