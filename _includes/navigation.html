@@ -53,9 +53,9 @@
 			</ul>
 		</li>
 		
-		<li>
-			<a id="darkModeText" onclick="setDarkMode()" style="cursor: pointer"></a>
-		</li>
+		<!-- <li>
+			<center><a id="darkModeText" onclick="setDarkMode()" style="cursor: pointer"></a></center>
+		</li> -->
 
 		{% for link in site.data.navigation %}
 	    {% if link.url contains 'http' %}
@@ -67,6 +67,12 @@
 	  {% endfor %}
 	</ul><!-- /.dl-menu -->
 </nav><!-- /.dl-menuwrapper -->
+
+<ul class="darkModeBtn">
+	<li>
+		<center><a id="darkModeText" onclick="setDarkMode()" style="cursor: pointer"></a></center>
+	</li>
+</ul>
 
 <script>
 
@@ -88,16 +94,16 @@ window.addEventListener('load', function() {
 				localStorage.setItem('darkMode', 'true');
 
 				enableDarkMode();
-				document.getElementById('darkModeText').textContent = 'Turn On the Lights!';
+				document.getElementById('darkModeText').innerHTML = '<img src="https://img.icons8.com/color/48/000000/smiling-sun.png">';
 
 			}else{
 				localStorage.setItem('darkMode', 'false');
 				disableDarkMode();
-				document.getElementById('darkModeText').textContent = 'Turn Off the Lights!';
+				document.getElementById('darkModeText').innerHTML = '<img src="https://img.icons8.com/color/48/000000/full-moon.png">'
 			}
 		}else{
 			localStorage.setItem('darkMode', 'true');
-			document.getElementById('darkModeText').textContent = 'Turn On the Lights!';
+			document.getElementById('darkModeText').innerHTML = '<img src="https://img.icons8.com/color/48/000000/smiling-sun.png">';
 			enableDarkMode();
 		}
 	}
@@ -313,12 +319,12 @@ window.addEventListener('load', function() {
 		if(localStorage.getItem('darkMode')){
 			if(localStorage.getItem('darkMode')==='true'){
 				enableDarkMode();
-				document.getElementById('darkModeText').textContent = 'Turn On the Lights!';
+				document.getElementById('darkModeText').innerHTML = '<img src="https://img.icons8.com/color/48/000000/smiling-sun.png">';
 			}else{
-				document.getElementById('darkModeText').textContent = 'Turn Off the Lights!';
+				document.getElementById('darkModeText').innerHTML = '<img src="https://img.icons8.com/color/48/000000/full-moon.png">';
 			}
 		}else{
-			document.getElementById('darkModeText').textContent = 'Turn Off the Lights!';
+			document.getElementById('darkModeText').innerHTML = '<img src="https://img.icons8.com/color/48/000000/full-moon.png">'
 		}
 	}
 
