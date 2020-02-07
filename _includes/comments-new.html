@@ -4,7 +4,7 @@
   <input name="options[redirect]" type="hidden" value="htpps://sid200.github.io/blog{{ page.url }}">
   <input name="fields[page]" type="hidden" value="{{ page.url }}">
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-  <input name="fields[part]" type="hidden" value="{{% if page.part %} page.part {% else %} '' {% endif %}}"
+  <input name="fields[part]" type="hidden" value="{{ {% if page.part %} page.part {% else %} '' {% endif %}}}">
   <input type="hidden" id="comment-parent" name="fields[reply_to]" value="">
 
   <p class="commentP">
