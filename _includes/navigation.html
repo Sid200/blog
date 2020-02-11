@@ -79,6 +79,8 @@
 function fade(element) {
     setTimeout(()=>{
 		$(`.${element.classList[0]}`).fadeOut();
+		document.body.style.overflow = 'unset';
+		document.body.style.position = 'unset';
 	}, 1000);
 }
 

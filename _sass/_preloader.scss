@@ -9,3 +9,8 @@
 	z-index: 9999;
 	background: url(../preloader.gif) center no-repeat #2A2826;
 }
+
+body{
+	overflow: hidden;
+	position: fixed;
+}
