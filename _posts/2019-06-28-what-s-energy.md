@@ -5,6 +5,7 @@ description: An Energy 101 <em>intro</em> 'talk'. Designed to provide the Essenc
   Energy?)
 mathjax: true
 series: true
+seriesname: Energy
 part: 1
 modified: 
 tags:

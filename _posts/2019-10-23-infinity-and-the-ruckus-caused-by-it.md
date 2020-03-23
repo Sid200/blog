@@ -7,6 +7,7 @@ date: 2019-10-23 09:05 -0400
 modified: 2019-11-25 12:17
 mathjax: true
 series: true
+seriesname: Infinity
 part: 1
 image:
   background: prime-bg.jpg
@@ -31,11 +32,11 @@ tags:
 
 *Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.* - **Albert Einstein**
 
-Hey there! I didn't really upload for a real long time primarily because I wasn't getting a topic I could talk about with all my heart and dedication and plus of that, I didn't have **time**. Doesn't matter though, I am back.
+Hey there! I didn't upload for a real long time primarily because I wasn't getting a topic I could talk about with all my heart and dedication, and besides that, I didn't have **time**. It doesn't matter, though, because I am back! (for some time)
 
-So, it came to my mind that I boast off being a Science Enthusiast on this blog but well I haven't had a single talk come up about one of the very awesomest, logical and cool topics I can think of - Mathematics
+So it came to my mind that I boast off being a Science Enthusiast on this blog, but well, I haven't had a single talk come up about one of the most awe-inspiring, perceptive topic I can think of - Mathematics.
 
-I thought and thought. At the end what came into my mind was talking about infinity. It is as abstract as it can be - probably more than Energy (remember the $$E_p$$ talk?). I don't really know what to tell or discuss but first this thing:
+I thought and thought. In the end, what came into my mind was talking about infinity. It resides in obscurity - with its mate **the Energy** (remember the $$E_p$$ talk?). I don't know what to tell or discuss but firstly a short note:
 
 > Infinity is not a number. For all the programmers out there, it is NaN (yeah, not a number)
 
@@ -43,8 +44,7 @@ People might have several misconceptions about it.
 
  > Something that is really large, something that is "something that can't be defined" or basically undefined and yeah it is really not defined.
 
-Instead of directly going into mathematical proofs or total into-the-notation talks, let us frame this thing bit by bit.
-I don't really know where to start. Infinity or $$\infty$$ (got mathjax :grin:) is used in a lot of places - starting from calculus (I have talks scheduled on that) to well, almost everything (yeah).
+Instead of straightaway getting into mathematical proofs or total into-the-notation talks, I will try to deal with it in different aspects. I don't know where to start. Infinity or $$\infty$$ (got mathjax :grin:) is used in a lot of places - starting from calculus (I have talks scheduled on that) to well, almost everything (yeah).
 
 If it isn't a number, what is it? Here's what **I** would define it in a *naive* manner:
 
@@ -56,10 +56,9 @@ Here's what I plan:
 - **Part - 2, 3** will go into the Physics side of the thing.
 - **Part - 4** will go into the computer side of the thing.
 
+## Alright, let's start
 
-## Alright, let's start...
-
-Let's start with a question: 
+Let's start with a question:
 
 *Which has more number of elements - the set of all positive integers or the set of all kinds of integers (positive or negative).*
 
@@ -79,7 +78,7 @@ I obviously am not gonna leave anyone without the proof for the same, the awesom
 
 ---
 
-### Let's answer this - **What is a Set?**
+### What is a Set?
 
 This is what the naive definition would be:
 
@@ -111,7 +110,7 @@ Here is some stuff that will help:
 - $$\{0\}$$ is again another set. As I said, you use $$\{ \}$$ to denote a set, this would stand as a set consisiting of only 1 element - 0. Similarly, $$\{1,2\}$$ consists of 2 elements - 1 and 2.
 
 - $$\cup$$, you could say is an operation, known by the name of *union*. You perform it on two sets. It is like addition. Just like addition of two numbers gives us a number, the **union** of two **sets** gives a set. Let's use the set builder form for the union:
-  $$A \cup B = \{x \mid x \in A$$ or $$x \in B \}$$. This reads 
+  $$A \cup B = \{x \mid x \in A$$ or $$x \in B \}$$. This reads
   **A** union **B** is a set of elements such that if an element *x* is chosen from it, it can either belong to the set A or the set **B**
 
 ---
@@ -124,16 +123,17 @@ Umm okay. Let's see. How do I explain this? Well, let's get back to our question
 
 Let's try to make up another simple question, the answer to which is already known to us. Hmmm.... Here is what came first to my mind (or third, the others were well, :poop:):
 
-*Does a normal, average human being have more nails or fingers?* 
+*Does a normal, average human being have more nails or fingers?*
 Well, the obvious answer is they both are equal in amount. How? Well we know that all fingers *have* nails. The nails are already *linked* to the fingers. Each finger has a *corresponding* nail. In other words, there is a *one-to-one correspondence* between the sets of fingers in a human being and sets of nails in a human.
 
 A bijection is a function (a function is like a string which connects the input and output values which belong to two different sets - the domain and the range) that exhibits this *one-to-one correspondence*. There is some additional stuff the next part would deal with.
 
 ### Didn't get functions?
+
 Say we had set $$A$$ consisting of the names of some people and set $$B$$ consisting of ice-creams. We could then define a function, let's name that $$f$$ (cuz obvious reasons) which links $$A$$ to $$B$$ or, goes from $$A$$ to $$B$$ such that whatever name we fed into the function, we would be given or linked to an element in $$B$$ which is an ice-cream that the person hates the most. Mathe*magically*:
 
 $$f : A \to B $$
-<br>
+
 $$f(x) = m \mid m \in B \text{ and } x \text{ hates } m \text{ the most. } $$
 
 $$\text {Provided, } x \in A$$
@@ -146,14 +146,14 @@ Also, $$\mathbb{Z}^{+}$$ and $$\mathbb{N}$$ are just the same, so I am gonna use
 Back to finding a bijection. How do we do that? Let's list the numbers from $$\mathbb{Z}$$ and $$\mathbb{N}$$:
 
 $$\mathbb{N}$$: 1, 2, 3, 4, 5, ..., $$\infty$$
-<br>
+
 $$\mathbb{Z}$$: $$-\infty$$ ..., -3, -2, -1, 0, 1, 2, 3 ..., $$+\infty$$
 
 How do we come up with a bijection? (We would also need to prove that it is a bijection by the way... And we will do it don't worry...)
 
 A bijection, requires things to correspond to each other. In other words, there has to be some kind of a part of a whole, within which the elements have same properties. Like for our nail example, all fingers are well, fingers. In this case, the part *is* the whole. What about $$\mathbb{N}$$ and $$\mathbb{Z}$$ ?
 
-$$\mathbb{N}$$ 
+$$\mathbb{N}$$
 seems a little hard for now, so let's concentrate on $$\mathbb{Z}$$ a little. Proper inspection will result in us concluding that there is one way we can divide $$\mathbb{Z}$$ into two things: the positive numbers and the negative numbers.
 
 Since we found two classes of numbers in $$\mathbb{Z}$$, what if we did something similar (and we would need to find some other two classes to prove a one-one correspondence)
@@ -164,14 +164,14 @@ Well, let's list the numbers again but this time, the odd numbers from $$\mathbb
 
 ---
 $$\mathbb{N}$$: 1, 3, 5, 7, ..., $$\infty$$ (Only Odd)
-<br>
+
 $$\mathbb{Z}$$: -1, -2, -3, -4, ..., $$-\infty$$ (Only negative)
 
 ---
 
 ---
 $$\mathbb{N}$$: 2, 4, 6, 8, ..., $$\infty$$ (Only Even)
-<br>
+
 $$\mathbb{Z}$$: 1, 2, 3, 4 ..., $$-\infty$$ (Only positive)
 ---
 
@@ -181,7 +181,7 @@ $$
 f(x) = \begin{cases}
   x/2 & x\text{ is even }
   \\ -(x+1)/2 & x\text{ is odd }
-\end{cases} 
+\end{cases}
 $$
 
 Now the question is whether the function is a bijection. First, what should we require for one-to-one correspondence? Well, firstly, there should be unique correspondence which is quite obvious - A nail can't belong to two fingers.
@@ -200,15 +200,18 @@ The second one is kind of non-intuitive. We would need to prove that the set of 
 Let's try to prove (or fail to prove) that the function we defined is bijective:
 
 ### Injectivity:
+
 Let, $$x_1$$ and $$x_2$$ belong to $$N$$
 Suppose
 $$f(x_1) = f(x_2)$$
 Three cases arise:
+
 1. $$x_1 , x_2$$ are both odd.
 2. $$x_1 , x_2$$ are both even.
-3. $$x_1$$ is odd and $$x_2$$ is even (and vice versa, which is the same case)
+2. $$x_1$$ is odd and $$x_2$$ is even (and vice versa, which is the same case)
 
-For 1, 
+For 1,
+
 $$f(x_1) = f(x_2)$$
 $$\implies -(x_1 + 1)/2 = -(x_2 + 1)/2$$
 $$\implies x_1 = x_2$$
@@ -223,7 +226,7 @@ $$\implies -x_1 = x_2 - 1$$
 
 Aww man, we couldn't prove that $$x_1 = x_2$$ for all cases. Well, then this blog post was all usele - Wait!
 
-We stated this:- 
+We stated this:-
 > Let, $$x_1$$ and $$x_2$$ belong to $$N$$
 
 This means that $$x_2 - 1$$ can't be negative or zero. But the 3rd case results in just that. How is that possible? Well, it is not. Hence, the 3rd case doesn't exist at all.
