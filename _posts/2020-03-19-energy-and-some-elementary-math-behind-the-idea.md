@@ -51,7 +51,7 @@ Here, $$s$$ stands for the displacement. Why $$s$$? Ask humans (and look up my p
 Anyways, if you think of the work done by a particular force, it seems logical that the output of **that** force would just be in that direction. What do I mean by that? This:
 
 <center>
-    <img src="/images/Energy/ElemMath/mayTheDirBeWithYou.png"><br>
+    <img src="/blog/images/Energy/ElemMath/mayTheDirBeWithYou.png"><br>
     <sub style="font-family: cursive">May the direction be with you.</sub>
 </center>
 
@@ -60,7 +60,7 @@ The thing is that this direction thingy is true for all point-like objects. In m
 Now consider this case - a point object in two dimensions acted by multiple forces. In this case, the net movement would be in some other direction depending on how large the forces are and their directions. Here's an example:
 
 <center>
-    <img src="/images/Energy/ElemMath/directiondimensions.png"><br>
+    <img src="/blog/images/Energy/ElemMath/directiondimensions.png"><br>
     <sub style="font-family: cursive">May the direction be IN you.</sub>
 </center>
 
@@ -71,7 +71,7 @@ We usually refer to these *additions* as *summing vectors* or *the addition of v
 I won't bother you with the mathematics for the calculation of the net direction when you have multiple vectors. That requires a different talk altogether, as I don't wanna club in too much information and render the knowledge useless. All you can know for now is that the net direction of two vectors is a triangle forming thingy. What do I mean?
 
 <center>
-    <img src="/images/Energy/ElemMath/additionOfVecs.png"><br>
+    <img src="/blog/images/Energy/ElemMath/additionOfVecs.png"><br>
     <sub style="font-family: cursive">Sum it up man!</sub>
 </center>
 
@@ -86,7 +86,7 @@ Oh by the way, if you're wondering what the difference between displacement and 
 So to isolate the displacement caused just by that force, we would need to do some angle play. If the situation was like so:
 
 <center>
-    <img src="/images/Energy/ElemMath/workDoneDotProd.png"><br>
+    <img src="/blog/images/Energy/ElemMath/workDoneDotProd.png"><br>
 </center>
 
 Then what we would have to take the net displacement and resolve it into "its components" (separate magnitudes along different directions... You could think of this as trying to get the vectors, along the direction of our force and perpendicular to it, that added up to give us the net displacement) along the direction of our force. Turns out, this situation is always a right triangle situation. If the angle between the net direction and the force is $$\theta$$, then the net displacement **by our force** turns out to be $$s \cdot cos(\theta)$$ (the displacement times the cosine of the angle $$\theta$$).
