@@ -34,7 +34,7 @@ image:
         {{ post.title }} <br>  
       </a>
       {% if post.series %}
-         <font size="4em" class="partTag" style="  border-style: solid; border-width:thin; border-radius: 0.3em; padding: 0.25em;">Part: {{ post.part }}</font> 
+         <font size="4em" class="partTag" style="  border-style: solid; border-width:thin; border-radius: 0.3em; padding: 0.25em;"> {{post.seriesname}} Series | Part: {{ post.part }}</font> 
       {% endif %}
     </h1>
     {% endif %}
