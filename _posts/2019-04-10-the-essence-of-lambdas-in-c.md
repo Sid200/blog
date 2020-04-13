@@ -2,7 +2,7 @@
 layout: post
 title: The Essence of Lambdas in C++
 description: Understand Lambdas in C++ like never before, in a beginner friendly manner
-modified: 
+modified: 2020-04-13 17:18 +0000
 tags:
 - cpp
 - c++
@@ -407,11 +407,25 @@ public:
 };
 ```
 
-If you're wondering why `m_a` could be changed even when `operator()()` was `const`, it's because you aren't changing what the reference is referring to (which you can't anyhow). [You're only changing the value of the thing being referred to.](https://stackoverflow.com/questions/23436836/why-can-reference-members-be-modified-by-const-member-functions)
+If you're wondering why `m_a` could be changed even when `operator()()` was `const`, it's because you aren't changing what the reference is referring to (cuz you can't anyhow). [You're only changing the value of the thing being referred to.](https://stackoverflow.com/questions/23436836/why-can-reference-members-be-modified-by-const-member-functions)
 
 Or think about it with a pointer notation. If it were a pointer, you wouldn't be changing what the pointer is pointing to, you are changing the value of the variable that is being pointed to.
 
-Now if you wanted all of the variables to be captured by reference, you could just do this:
+And another note. ***Don't think that***
+
+```cpp
+int a{3};
+
+[a]() mutable {a = 4;};
+
+//is equivalent to
+
+[&a](){a=4;};
+```
+
+They aren't equivalent. One of them creates a *personal* copy of `a` and changes that while the other one changes the value it took from the reference. In other words, the first lambda changes a copy while the second one changes the actual variable.
+
+Now if you wanted all of the variables (from the calling scope) to be captured by reference, you could just do this:
 
 ```cpp
 int b = 2;
@@ -422,9 +436,9 @@ lambda();
 std::cout << b;    //3
 ```
 
-I guess you can now make the functor for this lambda by yourself...
+> Even though I say you capture *all* of the variables, the compiler is smart enough to look at what you use inside the lambda and the *conceptual functor* contains just those thingies. A better way to convey this would be to say that this makes all of things accessible.
 
-*NOTE: If you don't specify anything inside the capture list, the default action is to provide no access to variables. You can think that it means there will be no member variables in the functor...*
+I guess you can now make the functor for this lambda by yourself...
 
 ### Mixed Captures
 
