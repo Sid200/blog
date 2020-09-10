@@ -1,8 +1,8 @@
 ---
 layout: post
 title: The Essence of Lambdas in C++
-description: Understand Lambdas in C++ like never before, in a beginner friendly manner
-modified: 2020-04-13 17:18 +0000
+description: Understand C++ lambdas like never before in a beginner friendly manner
+modified: 2020-09-11
 tags:
 - cpp
 - c++
@@ -17,14 +17,18 @@ image:
   feature: LambdasInCPP/lambdas-in-cpp.jpg
   credit: Myself :P
   creditlink: 
-date: 2019-04-10 19:51 +0000
+date: 2019-04-10
 ---
 
-# Hello there!
+Heyo!
 
-This, well is my first post on this blog. I just want to make sure you know that setting up this blog took way longer than I thought because I knew nothing about ‘Kramdown’ (a superset of Markdown) and Jekyll (Jekyll’s a static site generator). Not only that, I knew nothing about how Ruby and its 'GEMS' worked. And everything was (well maybe still is) foreign to me. So pardon me for any errata. I will fix stuff if that happens.
+This is my very first blog post. Here's my note to every reader:
 
-Anyway, let’s get on to the discussion.
+> This is my first post on this blog. I just want to make sure you know that setting up this blog took way longer than I thought because I knew nothing about Ruby, it's *GEMS*, Liquid, Jekyll and suchlike.
+
+Anyway, let’s get on to today's discussion.
+
+> **NOTE:** Hi there! It's Sid from the future. The current post has no faults whatsoever, but I don't think it covers some stuff it should, and I also think that I can explain some stuff even better. This means that a little bit of a change is underway. You can still continue to read the current post and it will probably be fruitful, but just make sure you know changes are in place.
 
 ## LAMBDAs in C++
 
