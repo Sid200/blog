@@ -5,26 +5,22 @@ image:
   feature: about-bg.jpg
   credit: Patrick Tomasso
   creditlink: https://unsplash.com/@impatrickt
-modified: 2019-04-07
+modified: 2020-09-11
 ---
 
-Hello there! Call me Sid, I will like it. This is a blog, as is evident and is mainly based on Science and Computers. It can be anything actually, revolving around what I might be wanting to talk. I can get philosophical sometimes and sometimes I just wanna talk about what annoys me the most. Sometimes I like to share with the world what I understand and sometimes I want to know what other people know about.
+Hi there! I am Sid, and this is my blog. Of course that's evident, but yeah... What is this blog exactly? Well this blog is everything and anything I wanna talk about. It can sometimes be me ranting about something (though I haven't done that yet, but I think I will very soon) or it can just be me being me.
 
-This is a friendly blog. All kinds of discussions with friendly fights are available here. All of that discussion happens in the comments section.
+This is what has happened here so far:
 
-The comments section is something that I am currently still developing. It is in a good state now though. You can comment and reply to the main comments and all that stuff. What I need to do is implement a notification system. I don't know when that is going to happen and stuff, but probably soon.
+- I made a blog for absolutely no reason other than just fun.
+- I added a couple of posts in here. Now in all honesty, to me these posts aren't up to the mark yet. (Yeah I am trying to hint at a major revamp of some sort... Well to be honest, it would be more of a modification marathon, but you get the point.)
+- I had some other stuff to do, so I abandoned the blog.
+- Sometime in between I again took it up, made some posts, add a commenting-system, modified some more code, then left it alone again.
+- Again, for absolutely no reason, we're back at it. This blog's gonna get better at whatever.
+- I can't guarantee I won't lose interest again (well, I'll try to not lose interest I guess); only time can tell.
 
-I have an alternate page or my ['homepage'](https://sid200.github.io). You can check it out if you want and learn about my projects and stuff (I currently have not updated it with all my project and that is probably gonna happen a lot later, because I want to get into a stable condition and do stuff slowly, I don't wanna rush it.)
+Anyways, that's the timeline, but what is this blog about again? As I said, it can be anything I like and you like (I don't really know how you would otherwise stumble upon this page...). That kinda delegates the answer and introduces a new question - *What do you like?* Uhhh, Science (minus a lot of Biology unless it's interesting and not just some mundane *learn-the-process-and-the-name* marathon) and related stuff. I don't wanna boast off, you can already see what I like (I mean I just said that I only blog about stuff I like)...
 
-About the regularity of posts and stuff, I had previously made up my mind to post once per two weeks and stuff, but I couldn't because of time, proper stuff, text reviews and all that stuff... So, currently it is around once per month.
+Keeping that talk aside forever, I would like to mention that this blog is by no means perfect. And ***wHiLe I aM a PeRfEcTiOnIsT***, I don't wanna make this a perfect blog - it's pretty cool with with it's flaws. Now if those flaws are bugs, then nah they're gonna go outta here - **ALWAYS COMMENT WHEREVER IF YOU FIND A BUG, AND I WILL TRY TO MAKE SURE YOU NEVER SEE IT AGAIN** (I might employ illegal methods if I can't fix it ﾍ(｀▽´*)).
 
-## What you might want to know about me:
-
-* I will discuss Maths, involving stuff like Calculus...
-* I talk about things in a manner which communicates the essence of the topic to you...
-* I love the way Physics works... And love to talk about it in a manner that would make me love it even more.
-* So, well, you can expect that I would talk mostly about Physics stuff if I talk about Science...
-* Please do note that I don't like Biology, so don't expect me to go about discussing stuff about it...
-* This is a community blog and is totally open to discussions!!!
-
-If you find any bugs on the blog and stuff, please be sure to inform me from the comments.
+Anyways, that's it for the whole about thingamajig. It wasn't about me, but more about the blog. If you wanna know more about me, go read *all* of the blog posts (*I mean it*, prolly).
