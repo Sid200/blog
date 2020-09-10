@@ -8,7 +8,7 @@ image:
 modified: 2019-04-07
 ---
 
-Hello there! My name is Siddhanth Bhowmick. Call me Sid, I will like it. This is a blog, as is evident and is mainly based on Science and Computers. It can be anything actually, revolving around what I might be wanting to talk. I can get philosophical sometimes and sometimes I just wanna talk about what annoys me the most. Sometimes I like to share with the world what I understand and sometimes I want to know what other people know about.
+Hello there! Call me Sid, I will like it. This is a blog, as is evident and is mainly based on Science and Computers. It can be anything actually, revolving around what I might be wanting to talk. I can get philosophical sometimes and sometimes I just wanna talk about what annoys me the most. Sometimes I like to share with the world what I understand and sometimes I want to know what other people know about.
 
 This is a friendly blog. All kinds of discussions with friendly fights are available here. All of that discussion happens in the comments section.
 
