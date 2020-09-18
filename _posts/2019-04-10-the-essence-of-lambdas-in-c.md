@@ -101,7 +101,6 @@ std::vector<int> vec{ 3, 5, 2, 9, 7 };
 
     //97532
 
-    std::cin.get();
     return 0;
 }
 ```
@@ -276,7 +275,6 @@ int a = 2;
 
 [a](){std::cout<<a;}();
 
-std::cin.get();
 return 0;
 }
 ```
