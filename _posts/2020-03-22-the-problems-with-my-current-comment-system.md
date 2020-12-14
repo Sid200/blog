@@ -20,6 +20,7 @@ image:
   credit: Volodymyr Hryshchenko
   creditlink: https://unsplash.com/@lunarts
 date: 2020-03-22
+unindex: true
 ---
 
 Hey there! Welcome to yet another blog post. This one's a meta-discussion about the comment system on this blog.

@@ -11,6 +11,9 @@ image:
 ---
 
 {% for post in paginator.posts %}
+{% if post.unindex %}
+  {% continue %}
+{% endif %}
 <article class="hentry mainPage-darkMode">
   <header>
     {% if post.image.feature %}

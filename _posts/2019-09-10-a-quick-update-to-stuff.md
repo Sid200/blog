@@ -2,6 +2,7 @@
 title: A Quick Update to Stuff
 layout: post
 date: 2019-09-10 17:58 -0400
+unindex: true
 ---
 
 Alright, let me be frank... things haven't been going very awesome lately.
