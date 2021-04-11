@@ -51,7 +51,7 @@ Here, $$s$$ denotes the displacement. Why $$s$$? Ask humans (and look up my post
 Anyhow, let's continue. If you think of the work done by a particular force, it seems logical that the output of **that** force would just be in it's direction. What do I mean by that? This:
 
 <center>
-    <img src="/blog/images/Energy/ElemMath/mayTheDirBeWithYou.svg" style="background-color: #1e1e1eff; height: 450px"><br>
+    <img src="/blog/images/Energy/ElemMath/mayTheDirBeWithYou.svg" style="background-color: #1e1e1eff; height: 450px" data-zoomable><br>
     <sub style="font-family: cursive">May the direction be with you.</sub>
 </center>
 
@@ -62,7 +62,7 @@ The thing is that this direction thingy is true for all point-like objects. In m
 Now consider a point object in two dimensions acted on by multiple forces. In this case, the net movement would be in some other direction depending on how large the forces are and their directions. Here's an example:
 
 <center>
-    <img src="/blog/images/Energy/ElemMath/directiondimensions.svg" style="background-color: #1e1e1eff; height: 450px"><br>
+    <img src="/blog/images/Energy/ElemMath/directiondimensions.svg" style="background-color: #1e1e1eff; height: 450px" data-zoomable><br>
     <sub style="font-family: cursive">May the direction be IN you.</sub>
 </center>
 
