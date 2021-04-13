@@ -96,7 +96,7 @@ Hello! 2+2=4
 Seems cool. You can pick up any *ASCII-Table* and see what each character maps to. Here's a short table that we can use:
 
 <center>
-    <img src="blog/images/Unicode/ascii-demo.svg" data-zoomable>
+    <img src="/blog/images/Unicode/ascii-demo.svg" data-zoomable>
 </center>
 
 > I ***definitely did not*** skip most of characters that weren't necessary for my example...
@@ -220,7 +220,7 @@ So, the UTF-16 code units are `0xD83D` and `0xDCA9`.
 The astute and informed readers will note that both UTF-16 and UTF-32 are dependent on the *endianness* of the computer. *Endianness* refers to the order in which the bytes of some data are stored in memory. Computers store things in bytes. A byte is the lowest unit of memory that is addressable, so *the order* essentially relates to the way what byte is assigned what address. If we follow the big-endian system, the most significant byte (the leftmost byte) is assigned the lowest memory address and the least significant byte (the rightmost byte) is assigned the highest memory address. Little-endian does the exact opposite:
 
 <center>
-    <img src="blog/images/Unicode/endianness.svg" data-zoomable>
+    <img src="/blog/images/Unicode/endianness.svg" data-zoomable>
 </center>
 
 So if we were to represent 💩 in UTF-16 (code units: `0xD83D`, `0xDCA9`) in memory in bytes, it would be different depending on what endianness we're following:
