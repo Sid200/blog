@@ -228,7 +228,7 @@ So if we were to represent 💩 in UTF-16 (code units: `0xD83D`, `0xDCA9`) in me
 - Big-endian (UTF-16BE): `0xD8` `0x3D` `0xDC` `0xA9`
 - Little-endian (UTF-16LE): `0x3D` `0xD8` `0xA9` `0xDC`
 
-UTF-32 has the same problem; it's representation is endianness dependent. To void confusion when we're sharing data, these encodings necessitate the use of a thing called *BOM*. The *BOM* or the *Byte Order Mark* (`U+FEFF`) is nothing but a code point prepended to the data with the same encoding format so as to provide a way to tell what the endianness of the encoding is and how to expect data:
+UTF-32 has the same problem; it's representation is endianness dependent. To avoid confusion when we're sharing data, these encodings necessitate the use of a thing called *BOM*. The *BOM* or the *Byte Order Mark* (`U+FEFF`) is nothing but a code point prepended to the data with the same encoding format so as to provide a way to tell what the endianness of the encoding is and how to expect data:
 
 > If the endian architecture of the decoder matches that of the encoder, the decoder detects the `U+FEFF` value, but an opposite-endian decoder interprets the BOM as the non-character value `U+FFFE` reserved for this purpose. This incorrect result provides a hint to perform byte-swapping for the remaining values.
 
